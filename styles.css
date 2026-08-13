@@ -415,23 +415,25 @@ em {
 /* ============================================================
    Problem cards
    ============================================================ */
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .section-intro { margin: 0 0 64px; max-width: 44ch; }
 .section-head h2 { max-width: 16ch; margin-bottom: 20px; }
 
-.problem-card {
-  background: var(--cream);
-  border: 1px solid var(--divider);
-  border-radius: var(--radius-card);
-  padding: 32px;
-}
-.problem-card .icon-tile {
+/* Shared icon tile — the sage chip used to mark each item */
+.icon-tile {
   width: 52px; height: 52px; border-radius: 14px; background: var(--sage);
   display: flex; align-items: center; justify-content: center;
-  color: var(--forest); margin-bottom: 24px;
+  color: var(--forest); margin-bottom: 24px; flex: none;
 }
+
+/* Line-marked item: a hairline rule above, no card container */
+.problem-card {
+  border-top: 1px solid var(--divider);
+  padding: 32px 0 0;
+}
+.problem-card .icon-tile { margin-bottom: 22px; }
 .problem-card .title { font: 400 24px var(--font-display); color: var(--forest); margin-bottom: 8px; }
-.problem-card .body { font: 400 15px/1.55 var(--font-body); color: var(--ink-muted); }
+.problem-card .body { font: 400 15px/1.55 var(--font-body); color: var(--ink-muted); max-width: 32ch; }
 
 /* ============================================================
    Solution (dark) — bridge + pillars
@@ -589,18 +591,18 @@ em {
    ============================================================ */
 .section--gradient h2 { color: var(--paper); max-width: 18ch; margin-bottom: 64px; }
 .section--gradient h2 em { color: var(--accent-on-dark); }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
 .reason {
-  border: 1px solid rgba(242, 236, 224, .14);
-  border-radius: 20px; padding: 28px;
-  background: rgba(242, 236, 224, .04);
-  transition: border-color .18s ease-out, background .18s ease-out;
+  border-top: 1px solid rgba(242, 236, 224, .22);
+  padding: 32px 0 0;
+  transition: border-color .18s ease-out;
 }
-.reason:hover { border-color: rgba(242, 236, 224, .28); background: rgba(242, 236, 224, .07); }
+.reason:hover { border-top-color: rgba(242, 236, 224, .45); }
+/* same sage chip + dark icon as the problem section */
 .reason .tile {
-  width: 46px; height: 46px; border-radius: 13px;
+  width: 52px; height: 52px; border-radius: 14px;
   display: inline-flex; align-items: center; justify-content: center;
-  color: var(--on-accent); margin-bottom: 22px;
+  background: var(--sage); color: var(--forest); margin-bottom: 22px; flex: none;
 }
 .reason .r-title { font: 700 19px/1.25 var(--font-body); letter-spacing: .005em; color: var(--paper); margin-bottom: 11px; }
 .reason .r-body { font: 400 15px/1.6 var(--font-body); color: rgba(242, 236, 224, .68); }
@@ -613,10 +615,10 @@ em {
 .pin-field svg { position: absolute; color: var(--divider); opacity: .5; }
 .customers .container { position: relative; z-index: 1; }
 
-.cust-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 96px; }
-.cust-step { display: flex; flex-direction: column; gap: 16px; }
+.cust-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 96px; }
+.cust-step { display: flex; flex-direction: column; gap: 16px; border-top: 1px solid var(--divider); padding-top: 32px; }
 .cust-step .title { font: 400 26px var(--font-display); color: var(--forest); }
-.cust-step .body { font: 400 16px/1.55 var(--font-body); color: var(--ink-muted); }
+.cust-step .body { font: 400 16px/1.55 var(--font-body); color: var(--ink-muted); max-width: 30ch; }
 
 .shop-strip {
   display: flex; align-items: center; justify-content: center; gap: 36px;
