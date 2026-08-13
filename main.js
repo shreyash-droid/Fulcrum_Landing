@@ -73,12 +73,12 @@
   var TABS = ['Customer management', 'Offers & notifications', 'Loyalty', 'Referrals', 'Analytics', 'Support'];
 
   function stat(i, label, value, delta) {
-    var bg = ['var(--forest)', 'var(--coral)', 'var(--lime)'][i];
+    var bg = ['var(--forest)', 'var(--coral)', 'var(--stat-light-bg)'][i];
     var light = i === 2;
-    var labelColor = light ? 'var(--forest)' : (i === 1 ? 'rgba(251,248,241,.78)' : 'rgba(242,236,224,.62)');
+    var labelColor = light ? 'var(--stat-light-fg)' : (i === 1 ? 'rgba(255,255,255,.82)' : 'var(--on-dark-label)');
     var labelOpacity = light ? '.72' : '1';
-    var valueColor = light ? 'var(--forest)' : 'var(--paper)';
-    var deltaColor = light ? 'var(--forest)' : (i === 0 ? 'var(--lime)' : 'var(--paper)');
+    var valueColor = light ? 'var(--stat-light-fg)' : 'var(--cream)';
+    var deltaColor = light ? 'var(--stat-light-fg)' : (i === 0 ? 'var(--accent-on-dark)' : 'var(--cream)');
     return '<div class="dash-stat" style="background:' + bg + '">' +
       '<div class="s-label" style="color:' + labelColor + ';opacity:' + labelOpacity + '">' + label + '</div>' +
       '<div class="s-value" style="color:' + valueColor + '">' + value + '</div>' +
