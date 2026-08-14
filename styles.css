@@ -29,7 +29,8 @@
   --muted-on-sage: #4C5A50;          /* muted text that sits on the sage surface (AA on sage) */
 
   /* Type */
-  --font-display: 'Work Sans', system-ui, -apple-system, sans-serif;  /* headings — matches the app UI */
+  --font-display: 'Work Sans', system-ui, -apple-system, sans-serif;  /* headings, roman — matches the app UI */
+  --font-accent: 'Playfair Display', Georgia, serif;                  /* heading italics — light, elegant contrast */
   --font-feature: 'Geist', system-ui, -apple-system, sans-serif;  /* readable sans for feature titles + data */
   --font-body: 'Geist', system-ui, -apple-system, sans-serif;
 
@@ -120,17 +121,17 @@ h1, h2, h3 { margin: 0; font-feature-settings: "liga" 1, "dlig" 1; text-wrap: pr
 h1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(3.25rem, 7vw, 6rem);
-  line-height: 1.02;
-  letter-spacing: -.035em;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
   color: var(--forest);
 }
 h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.4rem, 5vw, 4.25rem);
-  line-height: 1.06;
-  letter-spacing: -.03em;
+  font-size: clamp(2.15rem, 4.2vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
   color: var(--forest);
 }
 h3 {
@@ -139,9 +140,12 @@ h3 {
   letter-spacing: -.02em;
 }
 em {
-  font-family: var(--font-display);
+  font-family: var(--font-accent);
   font-style: italic;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 1.06em;
+  letter-spacing: normal;
+  color: var(--ink-muted);   /* two-tone accent on light sections; dark sections override below */
 }
 
 .u-serif { font-family: var(--font-display); }
