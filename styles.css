@@ -324,7 +324,7 @@ em {
   filter: blur(2px); z-index: 0;
 }
 .dot-grid {
-  position: absolute; top: 24px; left: 0; z-index: 4;
+  position: absolute; top: 24px; left: 0; z-index: 1;
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px;
 }
 .dot-grid span { width: 5px; height: 5px; border-radius: 50%; background: var(--coral); opacity: .7; }
