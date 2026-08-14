@@ -26,6 +26,7 @@
   --stat-light-fg: var(--forest);    /* text on that card */
   --accent-on-dark: var(--lime);     /* accent used as text/emphasis on a dark surface */
   --on-dark-label: rgba(242, 236, 224, .62);
+  --muted-on-sage: #4C5A50;          /* muted text that sits on the sage surface (AA on sage) */
 
   /* Type */
   --font-display: 'Instrument Serif', Georgia, serif;
@@ -72,6 +73,7 @@
   --stat-light-fg: var(--forest);
   --accent-on-dark: #9FC0FF;
   --on-dark-label: rgba(234, 241, 252, .74);
+  --muted-on-sage: #51617F;
 
   --shadow-card: 0 1px 2px rgba(23, 48, 107, .07);
   --shadow-pop: 0 12px 32px rgba(23, 48, 107, .16);
@@ -555,7 +557,7 @@ em {
 .checklist .item span:last-child { font: 500 15px var(--font-body); color: var(--forest); }
 
 .feature-dash { background: var(--sage); padding: 40px; border-left: 1px solid var(--divider); }
-.dash-label { font: 600 11px var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: #4C5A50; margin-bottom: 20px; }
+.dash-label { font: 600 11px var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted-on-sage); margin-bottom: 20px; }
 .dash-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 22px; }
 .dash-stat { border-radius: 16px; padding: 16px 16px 15px; }
 .dash-stat .s-label { font: 600 10px var(--font-body); letter-spacing: .1em; text-transform: uppercase; }
@@ -629,11 +631,33 @@ em {
 .shop-strip .label { font: 600 12px var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-muted); white-space: nowrap; }
 .shop-strip .icon { color: var(--forest); }
 
-.cust-card {
-  display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: center;
+/* Dual-app showcase: Business app (primary) / Customer app toggle */
+.app-showcase-title { font: 400 clamp(1.7rem, 3vw, 2.2rem) var(--font-display); letter-spacing: -.01em; color: var(--forest); margin: 0 0 10px; }
+.app-showcase-sub { max-width: 48ch; margin: 0 0 36px; }
+
+.app-showcase {
+  display: flex; flex-direction: column;
   background: var(--cream); border: 1px solid var(--divider);
-  border-radius: var(--radius-block); padding: 56px;
+  border-radius: var(--radius-block); padding: 40px 56px 56px;
 }
+.app-toggle {
+  align-self: flex-start;
+  display: inline-flex; gap: 4px; padding: 4px;
+  background: var(--sage); border-radius: var(--radius-pill);
+  margin-bottom: 44px;
+}
+.app-tab {
+  padding: 10px 22px; border: none; border-radius: var(--radius-pill);
+  background: transparent; color: var(--muted-on-sage);
+  font: 600 14px var(--font-body); cursor: pointer;
+  transition: background .15s ease-out, color .15s ease-out;
+}
+.app-tab:hover { color: var(--forest); }
+.app-tab[aria-selected="true"] { background: var(--forest); color: var(--cream); }
+.app-panel {
+  display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: center;
+}
+.app-panel[hidden] { display: none; }
 .reward-phone { width: 238px; background: var(--forest); border-radius: 38px; padding: 9px; box-shadow: var(--shadow-phone); }
 .reward-phone .screen { background: var(--paper); border-radius: 30px; padding: 22px 18px; height: 440px; overflow: hidden; }
 .reward-phone .title { font: 400 20px var(--font-display); color: var(--forest); }
@@ -804,7 +828,9 @@ em {
   .feature-panel { grid-template-columns: 1fr; }
   .feature-dash { border-left: none; border-top: 1px solid var(--divider); }
 
-  .cust-card { grid-template-columns: 1fr; gap: 40px; justify-items: center; text-align: center; }
+  .app-showcase { align-items: center; }
+  .app-toggle { align-self: center; }
+  .app-panel { grid-template-columns: 1fr; gap: 40px; justify-items: center; text-align: center; }
   .cust-cta p { max-width: none; }
   .store-badges { justify-content: center; }
 
@@ -821,7 +847,8 @@ em {
   .cust-steps { grid-template-columns: 1fr; }
   .dash-stats { grid-template-columns: 1fr; }
   .feature-copy { padding: 36px 28px; }
-  .cust-card { padding: 36px 24px; }
+  .app-showcase { padding: 32px 22px 40px; }
+  .app-showcase-sub { max-width: none; }
   .cta-block { padding: 72px 24px; }
   .cta-block .sparkle { display: none; }
   .connector { gap: 12px; }

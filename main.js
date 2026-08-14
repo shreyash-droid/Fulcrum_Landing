@@ -202,6 +202,23 @@
     paint();
   }
 
+  /* ---------- Dual-app showcase toggle (Business / Customer) ---------- */
+  var showcase = document.getElementById('appShowcase');
+  if (showcase) {
+    var appTabs = showcase.querySelectorAll('.app-tab');
+    var appPanels = showcase.querySelectorAll('.app-panel');
+    showcase.addEventListener('click', function (e) {
+      var btn = e.target.closest('.app-tab');
+      if (!btn) return;
+      var app = btn.getAttribute('data-app');
+      appTabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.getAttribute('data-app') === app)); });
+      appPanels.forEach(function (p) {
+        if (p.getAttribute('data-app') === app) p.removeAttribute('hidden');
+        else p.setAttribute('hidden', '');
+      });
+    });
+  }
+
   /* ---------- Reveal on scroll (one authored moment) ---------- */
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var reveals = document.querySelectorAll('.reveal');

@@ -355,39 +355,90 @@
         <span class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8 7.5 20 17M8 16.5 20 7"/></svg></span>
       </div>
 
-      <div class="cust-card reveal">
-        <div class="reward-phone" role="img" aria-label="Fulcrum customer rewards screen with 240 points">
-          <div class="screen">
-            <div class="title">Your rewards</div>
-            <div class="sub">Priya · pin 560001</div>
-            <div class="reward-balance">
-              <div class="label">Points balance</div>
-              <div class="num">240</div>
-              <div class="track"><i></i></div>
-              <div class="hint">60 points from a ₹100 voucher</div>
+      <div class="reveal">
+        <h3 class="app-showcase-title">Two apps, one platform</h3>
+        <p class="lead app-showcase-sub">The business app runs your shop; the customer app keeps them coming back.</p>
+      </div>
+
+      <div class="app-showcase reveal" id="appShowcase">
+        <div class="app-toggle" role="tablist" aria-label="Preview the Fulcrum apps">
+          <button class="app-tab" role="tab" id="tab-business" aria-controls="panel-business" data-app="business" aria-selected="true">Business app</button>
+          <button class="app-tab" role="tab" id="tab-customer" aria-controls="panel-customer" data-app="customer" aria-selected="false">Customer app</button>
+        </div>
+
+        <!-- BUSINESS APP — primary -->
+        <div class="app-panel" data-app="business" id="panel-business" role="tabpanel" aria-labelledby="tab-business">
+          <div class="reward-phone" role="img" aria-label="Fulcrum business app dashboard: revenue this month and recent visitors">
+            <div class="screen">
+              <div class="p-greet">Good morning, Mabel <span style="font-family:var(--font-body)">👋</span></div>
+              <div class="p-sub">Here's your business today</div>
+              <div class="p-stat">
+                <div class="p-stat-label">Revenue this month</div>
+                <div class="p-stat-num">₹1.2L</div>
+                <div class="p-stat-delta">↑ 22% vs last month</div>
+              </div>
+              <div class="p-section-label">Recent visitors</div>
+              <div class="stack-8">
+                <div class="p-visitor"><span class="swatch" style="background:var(--lime)"></span><span class="name">Priya Nair</span><span class="when">visited today</span></div>
+                <div class="p-visitor"><span class="swatch" style="background:var(--coral)"></span><span class="name">Arjun Rao</span><span class="when">visited today</span></div>
+                <div class="p-visitor"><span class="swatch" style="background:var(--sky)"></span><span class="name">Meera Shah</span><span class="when">yesterday</span></div>
+              </div>
             </div>
-            <div class="reward-list-label">Redeem for</div>
-            <div class="stack-8" style="gap:8px">
-              <div class="reward-item"><span class="label">₹100 Amazon voucher</span><span class="pts">300 pts</span></div>
-              <div class="reward-item"><span class="label">₹250 Amazon voucher</span><span class="pts">700 pts</span></div>
+          </div>
+          <div class="cust-cta">
+            <h3>Your whole shopfront, in one app.</h3>
+            <p>See who walked in, reward every visit, and send the offer that brings quiet regulars back — right from your phone, in minutes a day.</p>
+            <div style="margin-bottom:24px">
+              <a href="#" class="btn btn--primary btn--lg">Download the business app <span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <div class="store-badges">
+              <a href="#" class="store-badge" aria-label="Download the business app on the App Store">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2 1.6-2.9 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.5 2 1 0 1.3-.6 2.5-.6s1.5.6 2.5.6 1.7-1 2.4-2c.7-1.1 1-2.1 1-2.2-.1 0-2.3-.9-2.3-3.4z"/><path d="M14.6 6.7c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.5-.8 2.5.9 0 1.8-.5 2.4-1.1z"/></svg>
+                <span class="txt"><span class="small">Download on the</span><span class="big">App Store</span></span>
+              </a>
+              <a href="#" class="store-badge" aria-label="Get the business app on Google Play">
+                <svg width="20" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l10-10.7-10-8.7z" fill="#7FA9C8"/><path d="M17.2 15.4l-3.6-3.4 3.7-3.4 3.1 1.8c1.1.6 1.1 1.6 0 2.3l-3.2 1.7z" fill="#C4E538"/><path d="M13.6 12l3.6 3.4-9.9 5.4c-.4.2-.8.2-1.2.1l7.5-8.9z" fill="#E85D3C"/><path d="M13.6 12L6.1 3.1c.4-.1.8-.1 1.2.1l9.9 5.4-3.6 3.4z" fill="#FBF8F1"/></svg>
+                <span class="txt"><span class="small">Get it on</span><span class="big">Google Play</span></span>
+              </a>
             </div>
           </div>
         </div>
-        <div class="cust-cta">
-          <h3>Give your regulars a reason to come back.</h3>
-          <p>One app, every neighbourhood shop. Points that turn into real Amazon vouchers.</p>
-          <div style="margin-bottom:24px">
-            <a href="#" class="btn btn--primary btn--lg">Download the customer app <span class="arrow" aria-hidden="true">↗</span></a>
+
+        <!-- CUSTOMER APP -->
+        <div class="app-panel" data-app="customer" id="panel-customer" role="tabpanel" aria-labelledby="tab-customer" hidden>
+          <div class="reward-phone" role="img" aria-label="Fulcrum customer rewards screen with 240 points">
+            <div class="screen">
+              <div class="title">Your rewards</div>
+              <div class="sub">Priya · pin 560001</div>
+              <div class="reward-balance">
+                <div class="label">Points balance</div>
+                <div class="num">240</div>
+                <div class="track"><i></i></div>
+                <div class="hint">60 points from a ₹100 voucher</div>
+              </div>
+              <div class="reward-list-label">Redeem for</div>
+              <div class="stack-8" style="gap:8px">
+                <div class="reward-item"><span class="label">₹100 Amazon voucher</span><span class="pts">300 pts</span></div>
+                <div class="reward-item"><span class="label">₹250 Amazon voucher</span><span class="pts">700 pts</span></div>
+              </div>
+            </div>
           </div>
-          <div class="store-badges">
-            <a href="#" class="store-badge" aria-label="Download on the App Store">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2 1.6-2.9 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.5 2 1 0 1.3-.6 2.5-.6s1.5.6 2.5.6 1.7-1 2.4-2c.7-1.1 1-2.1 1-2.2-.1 0-2.3-.9-2.3-3.4z"/><path d="M14.6 6.7c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.5-.8 2.5.9 0 1.8-.5 2.4-1.1z"/></svg>
-              <span class="txt"><span class="small">Download on the</span><span class="big">App Store</span></span>
-            </a>
-            <a href="#" class="store-badge" aria-label="Get it on Google Play">
-              <svg width="20" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l10-10.7-10-8.7z" fill="#7FA9C8"/><path d="M17.2 15.4l-3.6-3.4 3.7-3.4 3.1 1.8c1.1.6 1.1 1.6 0 2.3l-3.2 1.7z" fill="#C4E538"/><path d="M13.6 12l3.6 3.4-9.9 5.4c-.4.2-.8.2-1.2.1l7.5-8.9z" fill="#E85D3C"/><path d="M13.6 12L6.1 3.1c.4-.1.8-.1 1.2.1l9.9 5.4-3.6 3.4z" fill="#FBF8F1"/></svg>
-              <span class="txt"><span class="small">Get it on</span><span class="big">Google Play</span></span>
-            </a>
+          <div class="cust-cta">
+            <h3>Give your regulars a reason to come back.</h3>
+            <p>One app, every neighbourhood shop. Points that turn into real Amazon vouchers.</p>
+            <div style="margin-bottom:24px">
+              <a href="#" class="btn btn--primary btn--lg">Download the customer app <span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <div class="store-badges">
+              <a href="#" class="store-badge" aria-label="Download the customer app on the App Store">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2 1.6-2.9 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.5 2 1 0 1.3-.6 2.5-.6s1.5.6 2.5.6 1.7-1 2.4-2c.7-1.1 1-2.1 1-2.2-.1 0-2.3-.9-2.3-3.4z"/><path d="M14.6 6.7c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.5-.8 2.5.9 0 1.8-.5 2.4-1.1z"/></svg>
+                <span class="txt"><span class="small">Download on the</span><span class="big">App Store</span></span>
+              </a>
+              <a href="#" class="store-badge" aria-label="Get the customer app on Google Play">
+                <svg width="20" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l10-10.7-10-8.7z" fill="#7FA9C8"/><path d="M17.2 15.4l-3.6-3.4 3.7-3.4 3.1 1.8c1.1.6 1.1 1.6 0 2.3l-3.2 1.7z" fill="#C4E538"/><path d="M13.6 12l3.6 3.4-9.9 5.4c-.4.2-.8.2-1.2.1l7.5-8.9z" fill="#E85D3C"/><path d="M13.6 12L6.1 3.1c.4-.1.8-.1 1.2.1l9.9 5.4-3.6 3.4z" fill="#FBF8F1"/></svg>
+                <span class="txt"><span class="small">Get it on</span><span class="big">Google Play</span></span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
