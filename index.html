@@ -17,8 +17,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Apply the saved colour theme before paint to avoid a flash. -->
+  <script>(function(){try{var t=localStorage.getItem('fulcrum-theme');if(t==='blue')document.documentElement.setAttribute('data-theme','blue');else if(t==='warm')document.documentElement.removeAttribute('data-theme');}catch(e){}})();</script>
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=Geist:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:0;background:var(--forest);color:var(--cream);padding:12px 18px;border-radius:0 0 10px 0;z-index:100" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">Skip to content</a>
@@ -36,6 +39,10 @@
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-actions">
+        <div class="theme-switch" role="group" aria-label="Colour theme">
+          <button type="button" class="theme-dot" data-theme-set="warm" title="Warm theme" aria-label="Warm theme" aria-pressed="true"></button>
+          <button type="button" class="theme-dot" data-theme-set="blue" title="Blue theme" aria-label="Blue theme" aria-pressed="false"></button>
+        </div>
         <a href="#" class="login">Log in</a>
         <a href="#" class="btn btn--primary btn--md">Get started <span class="arrow" aria-hidden="true">↗</span></a>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -675,6 +682,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=5"></script>
 </body>
 </html>

@@ -289,6 +289,27 @@ em {
   gap: 20px;
 }
 .nav-actions .login { font: 500 14px var(--font-body); color: var(--forest); white-space: nowrap; }
+
+/* Theme switch — Warm / Blue. Dot colours are fixed (not themed) so each
+   swatch always represents its palette. */
+.theme-switch {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px; border-radius: var(--radius-pill);
+  background: var(--sage); border: 1px solid var(--divider);
+}
+.theme-dot {
+  width: 20px; height: 20px; padding: 0; flex: none; cursor: pointer;
+  border: none; border-radius: 50%; opacity: .5;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12);
+  transition: opacity .15s ease-out, transform .12s ease-out, box-shadow .15s ease-out;
+}
+.theme-dot[data-theme-set="warm"] { background: linear-gradient(135deg, #1B3A2E 55%, #C4E538 55%); }
+.theme-dot[data-theme-set="blue"] { background: linear-gradient(135deg, #17306B 55%, #3E72EC 55%); }
+.theme-dot:hover { opacity: .85; transform: scale(1.08); }
+.theme-dot[aria-pressed="true"] {
+  opacity: 1; transform: scale(1.04);
+  box-shadow: 0 0 0 2px var(--cream), 0 0 0 3.5px var(--ink-muted);
+}
 .nav-toggle {
   display: none;
   width: 44px; height: 44px;

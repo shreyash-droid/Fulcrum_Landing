@@ -33,6 +33,30 @@
     });
   }
 
+  /* ---------- Theme switch (Warm / Blue) ---------- */
+  var themeSwitch = document.querySelector('.theme-switch');
+  if (themeSwitch) {
+    var root = document.documentElement;
+    var metaTheme = document.querySelector('meta[name="theme-color"]');
+    var THEME_BG = { warm: '#F2ECE0', blue: '#EAF1FC' };
+    function currentTheme() { return root.getAttribute('data-theme') === 'blue' ? 'blue' : 'warm'; }
+    function applyTheme(name) {
+      if (name === 'blue') root.setAttribute('data-theme', 'blue');
+      else root.removeAttribute('data-theme');
+      try { localStorage.setItem('fulcrum-theme', name); } catch (e) {}
+      if (metaTheme) metaTheme.setAttribute('content', THEME_BG[name]);
+      themeSwitch.querySelectorAll('.theme-dot').forEach(function (d) {
+        d.setAttribute('aria-pressed', String(d.getAttribute('data-theme-set') === name));
+      });
+    }
+    themeSwitch.addEventListener('click', function (e) {
+      var btn = e.target.closest('.theme-dot');
+      if (btn) applyTheme(btn.getAttribute('data-theme-set'));
+    });
+    // Sync button state with whatever the pre-paint script applied.
+    applyTheme(currentTheme());
+  }
+
   /* ---------- Scattered map pins (For customers bg) ---------- */
   var pinField = document.getElementById('pinField');
   if (pinField) {
