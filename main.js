@@ -70,7 +70,7 @@
   }
 
   /* ---------- Features: tabs + dashboard ---------- */
-  var TABS = ['Customer management', 'Offers & notifications', 'Loyalty', 'Referrals', 'Analytics', 'Support'];
+  var TABS = ['Customer management', 'Offers and notifications', 'Loyalty', 'Referrals', 'Analytics', 'Support'];
 
   function stat(i, label, value, delta) {
     var bg = ['var(--forest)', 'var(--coral)', 'var(--stat-light-bg)'][i];
@@ -95,10 +95,10 @@
       accent: 'var(--lime)', footer: 'View all customers →',
       bars: [['Priya', 92], ['Arjun', 78], ['Meera', 64], ['Ravi', 51], ['Sana', 44], ['Neha', 33]]
     },
-    'Offers & notifications': {
+    'Offers and notifications': {
       title: 'Send offers that actually get used.',
       desc: 'Schedule SMS, WhatsApp, or in-app offers. Target by spend, frequency, or last visit — not spray-and-pray.',
-      checklist: ['WhatsApp & SMS campaigns', 'Segment by behaviour', 'Track redemption in real-time'],
+      checklist: ['WhatsApp and SMS campaigns', 'Segment by behaviour', 'Track redemption in real-time'],
       dashLabel: 'Campaign performance · This week',
       stats: [['Sent', '3,200', 'this week'], ['Redeemed', '41%', '↑ 9 pts'], ['Top channel', 'WhatsApp', '74% open']],
       accent: 'var(--coral)', footer: 'View all campaigns →',
@@ -124,7 +124,7 @@
     },
     'Analytics': {
       title: 'Insights that actually change decisions.',
-      desc: "See what's working — and what isn't. Repeat rate, top customers, best offers, all on one screen.",
+      desc: "See what’s working — and what isn’t. Repeat rate, top customers, best offers, all on one screen.",
       checklist: ['Repeat vs new customer ratio', 'Offer performance tracking', 'Weekly digest via WhatsApp'],
       dashLabel: 'Live dashboard · This week at Sharma Sweets',
       stats: [['Visits', '482', '↑ 18%'], ['Repeat', '68%', '↑ 8 pts'], ['Revenue', '₹1.2L', '↑ 22%']],
@@ -134,7 +134,7 @@
     },
     'Support': {
       title: 'Real humans, on WhatsApp, in your language.',
-      desc: "No chatbots. No tickets. Talk to someone who's actually set up shops like yours.",
+      desc: "No chatbots. No tickets. Talk to someone who’s actually set up shops like yours.",
       checklist: ['WhatsApp support, 7 days', 'Hindi, English, Tamil, Marathi', 'Free onboarding call'],
       dashLabel: 'Support · Last 7 days',
       stats: [['Avg reply', '4 min', 'on WhatsApp'], ['CSAT', '4.9', 'out of 5'], ['Coverage', '7 days', 'a week']],

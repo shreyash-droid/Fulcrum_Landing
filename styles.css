@@ -99,6 +99,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1;
   overflow-x: hidden;
 }
 
@@ -120,18 +122,18 @@ h1, h2, h3 { margin: 0; font-feature-settings: "liga" 1, "dlig" 1; text-wrap: pr
 /* ---------- Type system ---------- */
 h1 {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: clamp(2.5rem, 5vw, 4.25rem);
   line-height: 1.1;
-  letter-spacing: -.02em;
+  letter-spacing: -.021em;
   color: var(--forest);
 }
 h2 {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: clamp(2.15rem, 4.2vw, 3.5rem);
   line-height: 1.1;
-  letter-spacing: -.02em;
+  letter-spacing: -.021em;
   color: var(--forest);
 }
 h3 {
@@ -139,11 +141,13 @@ h3 {
   font-weight: 600;
   letter-spacing: -.02em;
 }
+/* Playfair italic accent — nudged to 500 so it holds its own against the
+   lighter (600) roman headings; the pairing reads calmer, less high-contrast. */
 em {
   font-family: var(--font-accent);
   font-style: italic;
-  font-weight: 400;
-  font-size: 1.06em;
+  font-weight: 500;
+  font-size: 1.08em;
   letter-spacing: normal;
   color: var(--ink-muted);   /* two-tone accent on light sections; dark sections override below */
 }
@@ -677,7 +681,7 @@ em {
 }
 .app-panel[hidden] { display: none; }
 .reward-phone { width: 238px; background: var(--forest); border-radius: 38px; padding: 9px; box-shadow: var(--shadow-phone); }
-.reward-phone .screen { background: var(--paper); border-radius: 30px; padding: 22px 18px; height: 440px; overflow: hidden; }
+.reward-phone .screen { position: relative; background: var(--paper); border-radius: 30px; padding: 22px 18px; height: 440px; overflow: hidden; }
 .reward-phone .title { font: 600 19px var(--font-display); letter-spacing: -.01em; color: var(--forest); }
 .reward-phone .sub { font: 400 12px var(--font-body); color: var(--ink-muted); margin-top: 3px; }
 .reward-balance { margin-top: 18px; background: var(--forest); border-radius: 18px; padding: 18px; }
@@ -795,6 +799,131 @@ em {
 .reveal.is-in { opacity: 1; transform: none; }
 
 /* ============================================================
+   Trust / results band (below hero)
+   ============================================================ */
+.proof-band {
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+  background: var(--paper);
+}
+.proof-band .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.proof-item {
+  padding: 40px 32px;
+  border-left: 1px solid var(--divider);
+}
+.proof-item:first-child { border-left: none; padding-left: 0; }
+.proof-item:last-child { padding-right: 0; }
+.proof-item .num {
+  font: 700 clamp(2rem, 3.4vw, 2.75rem) var(--font-display);
+  letter-spacing: -.02em; line-height: 1; color: var(--forest);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.proof-item .num .u { color: var(--coral); }
+.proof-item .lbl {
+  margin-top: 12px;
+  font: 400 14px/1.5 var(--font-body); color: var(--ink-muted); max-width: 22ch;
+}
+
+/* ============================================================
+   Testimonials — voices from the counter
+   ============================================================ */
+.tmony-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.tmony {
+  display: flex; flex-direction: column;
+  background: var(--cream); border: 1px solid var(--divider);
+  border-radius: var(--radius-card); padding: 32px 30px;
+  transition: transform .18s ease-out, box-shadow .18s ease-out, border-color .18s ease-out;
+}
+.tmony:hover { transform: translateY(-4px); box-shadow: var(--shadow-pop); border-color: transparent; }
+.tmony .mark {
+  font: 400 56px/.6 var(--font-accent); color: var(--lime);
+  height: 30px; margin-bottom: 4px;
+}
+.tmony blockquote {
+  margin: 0 0 24px; flex: 1;
+  font: 400 17px/1.55 var(--font-body); color: var(--forest); letter-spacing: -.005em;
+}
+.tmony blockquote b { font-weight: 600; }
+.tmony .who { display: flex; align-items: center; gap: 12px; }
+.tmony .avatar {
+  width: 42px; height: 42px; flex: none; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font: 700 15px var(--font-display); color: var(--on-accent);
+}
+.tmony .who .name { font: 600 14px var(--font-body); color: var(--forest); }
+.tmony .who .role { font: 400 13px var(--font-body); color: var(--ink-muted); margin-top: 1px; }
+
+/* ============================================================
+   Pricing teaser — free to start
+   ============================================================ */
+.pricing-head { text-align: center; margin-bottom: 56px; }
+.pricing-head h2 { max-width: 20ch; margin: 0 auto 16px; }
+.pricing-head .lead { max-width: 54ch; margin: 0 auto; }
+
+/* Three duration plans — same product, longer commit = lower daily cost */
+.plans {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px; max-width: 1040px; margin: 0 auto; align-items: stretch;
+}
+.plan {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--cream); border: 1px solid var(--divider);
+  border-radius: var(--radius-block); padding: 34px 30px;
+}
+.plan--featured { border: 1.5px solid var(--forest); box-shadow: var(--shadow-pop); }
+.plan .badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--lime); color: var(--on-accent);
+  font: 700 11px var(--font-body); letter-spacing: .1em; text-transform: uppercase;
+  padding: 6px 14px; border-radius: var(--radius-pill); white-space: nowrap;
+}
+.plan .p-name { font: 600 13px var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-muted); }
+.plan .p-price { display: flex; align-items: baseline; gap: 6px; margin: 14px 0 2px; }
+.plan .p-price .amt {
+  font: 600 clamp(2.3rem, 4.4vw, 3rem) var(--font-display);
+  letter-spacing: -.03em; line-height: 1; color: var(--forest);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.plan .p-price .per { font: 400 14px var(--font-body); color: var(--ink-muted); }
+.plan .p-gst { font: 400 12px var(--font-body); color: var(--ink-muted); }
+.plan .p-day { margin-top: 18px; font: 600 15px var(--font-body); color: var(--forest); }
+.plan .p-save {
+  align-self: flex-start; margin-top: 12px;
+  background: var(--sage); color: var(--forest);
+  border-radius: var(--radius-pill); padding: 6px 13px;
+  font: 600 12px var(--font-body);
+}
+.plan--featured .p-save { background: var(--lime); color: var(--on-accent); }
+.plan .p-spacer { flex: 1; min-height: 12px; }
+.plan .btn { margin-top: 24px; width: 100%; }
+
+/* Shared "every plan includes" strip */
+.plan-includes {
+  max-width: 1040px; margin: 24px auto 0;
+  background: var(--cream); border: 1px solid var(--divider);
+  border-radius: var(--radius-card); padding: 30px 34px;
+}
+.plan-includes .lbl { font: 600 12px var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px; }
+.plan-includes ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 30px; margin: 0; padding: 0; list-style: none; }
+.plan-includes li { display: flex; align-items: flex-start; gap: 11px; font: 400 15px/1.4 var(--font-body); color: var(--forest); }
+.plan-includes .check { width: 21px; height: 21px; flex: none; margin-top: 1px; border-radius: 50%; background: var(--lime); display: inline-flex; align-items: center; justify-content: center; color: var(--on-accent); font-size: 12px; }
+.pricing-foot { text-align: center; margin-top: 22px; font: 400 13px var(--font-body); color: var(--ink-muted); }
+
+/* Reassurance line under a CTA cluster */
+.cta-reassure {
+  display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-top: 18px; font: 500 13px var(--font-body); color: var(--ink-muted);
+}
+.cta-reassure .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--divider); }
+.section--gradient .cta-reassure { color: rgba(242, 236, 224, .7); }
+.cta-block .cta-reassure { color: var(--on-accent); opacity: .72; justify-content: center; }
+.cta-block .cta-reassure .sep { background: var(--on-accent); opacity: .4; }
+
+/* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 1080px) {
@@ -854,6 +983,16 @@ em {
 
   .faq-grid { grid-template-columns: 1fr; gap: 36px; }
 
+  .proof-band .container { grid-template-columns: repeat(2, 1fr); }
+  .proof-item { padding: 32px 28px; }
+  .proof-item:nth-child(odd) { border-left: none; padding-left: 0; }
+  .proof-item:nth-child(3), .proof-item:nth-child(4) { border-top: 1px solid var(--divider); }
+
+  .tmony-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+  .plans { grid-template-columns: minmax(0, 460px); justify-content: center; }
+  .plan-includes { max-width: 460px; }
+  .plan-includes ul { grid-template-columns: 1fr; }
+
   .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer-brand { grid-column: 1 / -1; }
 }
@@ -862,6 +1001,9 @@ em {
   :root { --section-y: 88px; }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr; }
+  .proof-band .container { grid-template-columns: 1fr; }
+  .proof-item { border-left: none !important; padding: 24px 0 !important; border-top: 1px solid var(--divider); }
+  .proof-item:first-child { border-top: none; }
   .cust-steps { grid-template-columns: 1fr; }
   .dash-stats { grid-template-columns: 1fr; }
   .feature-copy { padding: 36px 28px; }
