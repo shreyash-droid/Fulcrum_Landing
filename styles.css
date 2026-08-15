@@ -310,6 +310,9 @@ em {
   opacity: 1; transform: scale(1.04);
   box-shadow: 0 0 0 2px var(--cream), 0 0 0 3.5px var(--ink-muted);
 }
+
+/* Menu-only links — hidden on desktop, revealed inside the mobile menu. */
+.nav-menu-login, .nav-menu-cta { display: none; }
 .nav-toggle {
   display: none;
   width: 44px; height: 44px;
@@ -958,7 +961,10 @@ em {
   :root { --gutter: 24px; }
   .nav-links { display: none; }
   .nav-toggle { display: inline-flex; }
-  .nav-actions .login { display: none; }
+  .nav-actions .login,
+  .nav-actions .btn--primary { display: none; }
+  .nav { gap: 14px; }
+  .nav-actions { gap: 12px; }
 
   .nav-links.is-open {
     position: absolute;
@@ -981,6 +987,16 @@ em {
     border-bottom: 1px solid var(--divider);
   }
   .nav-links.is-open a:last-child { border-bottom: none; }
+  .nav-links.is-open .nav-menu-login { display: block; }
+  .nav-links.is-open .nav-menu-cta {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 14px;
+    padding: 14px 24px;
+    font-size: 15px;
+    color: var(--on-accent);
+    border-bottom: none;
+  }
 
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .hero-visual { margin-top: 24px; left: 50%; transform: translateX(-50%) scale(.92); transform-origin: top center; }
@@ -1042,6 +1058,11 @@ em {
 
 @media (max-width: 400px) {
   .hero-visual { transform: translateX(-50%) scale(.72); }
+}
+
+@media (max-width: 360px) {
+  .hero-visual { transform: translateX(-50%) scale(.64); }
+  .cta-reassure { font-size: 12px; gap: 8px; }
 }
 
 /* ---------- Motion preference ---------- */
