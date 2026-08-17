@@ -214,6 +214,10 @@
       return '<button class="feature-tab" role="tab" aria-selected="' + (t === active) + '">' + t + '</button>';
     }).join('');
     panelEl.innerHTML = renderPanel(active);
+    // Retrigger the cross-fade on each swap.
+    panelEl.classList.remove('panel-in');
+    void panelEl.offsetWidth;
+    panelEl.classList.add('panel-in');
   }
 
   if (tabsEl && panelEl) {
@@ -259,5 +263,42 @@
     reveals.forEach(function (el) { io.observe(el); });
     // Safety net: never leave content hidden if the observer never fires.
     setTimeout(showAll, 1600);
+  }
+
+  /* ---------- Count-up stats (trust band) ---------- */
+  var counters = document.querySelectorAll('.count[data-to]');
+  function finalValue(el) {
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    return parseFloat(el.getAttribute('data-to')).toFixed(dec);
+  }
+  if (counters.length) {
+    if (reduce || !('IntersectionObserver' in window)) {
+      counters.forEach(function (el) { el.textContent = finalValue(el); });
+    } else {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          var el = en.target;
+          cio.unobserve(el);
+          var to = parseFloat(el.getAttribute('data-to'));
+          var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+          var dur = 1100, start = null;
+          function tick(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = (to * eased).toFixed(dec);
+            if (p < 1) requestAnimationFrame(tick);
+            else el.textContent = to.toFixed(dec);
+          }
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.6 });
+      counters.forEach(function (el) {
+        var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+        el.textContent = (0).toFixed(dec);
+        cio.observe(el);
+      });
+    }
   }
 })();

@@ -21,7 +21,7 @@
   <script>(function(){try{var t=localStorage.getItem('fulcrum-theme');if(t==='blue')document.documentElement.setAttribute('data-theme','blue');else if(t==='warm')document.documentElement.removeAttribute('data-theme');}catch(e){}})();</script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=Geist:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
   <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:0;background:var(--forest);color:var(--cream);padding:12px 18px;border-radius:0 0 10px 0;z-index:100" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">Skip to content</a>
@@ -59,8 +59,8 @@
   <!-- ============================== HERO ============================== -->
   <section class="hero">
     <div class="container">
-      <div class="hero-grid">
-        <div class="reveal">
+      <div class="hero-grid hero-enter">
+        <div class="hero-intro">
           <div class="tagline"><span class="dot"></span> The local business growth engine</div>
           <h1>The CRM built for retail <em>micro-businesses.</em></h1>
           <p class="lead">Acquire customers. Retain relationships. Grow repeat business — all from one refreshingly simple platform.</p>
@@ -76,7 +76,7 @@
         </div>
 
         <!-- phone composition -->
-        <div class="reveal" style="transition-delay:.08s">
+        <div class="hero-visual-wrap">
         <div class="hero-visual">
           <div class="blob"></div>
           <div class="dot-grid" aria-hidden="true">
@@ -156,11 +156,11 @@
   <section class="proof-band" aria-label="Why shop owners choose Fulcrum">
     <div class="container">
       <div class="proof-item reveal">
-        <div class="num">15<span class="u">&nbsp;min</span></div>
+        <div class="num"><span class="count" data-to="15">15</span><span class="u">&nbsp;min</span></div>
         <div class="lbl">From sign-up to your first scan at the counter.</div>
       </div>
       <div class="proof-item reveal" style="transition-delay:.06s">
-        <div class="num">2.3<span class="u">&times;</span></div>
+        <div class="num"><span class="count" data-to="2.3" data-dec="1">2.3</span><span class="u">&times;</span></div>
         <div class="lbl">More repeat visits from customers on your loyalty program.</div>
       </div>
       <div class="proof-item reveal" style="transition-delay:.12s">
@@ -168,7 +168,7 @@
         <div class="lbl">Hardware to buy. It runs on the phone already in your pocket.</div>
       </div>
       <div class="proof-item reveal" style="transition-delay:.18s">
-        <div class="num">4<span class="u">&nbsp;min</span></div>
+        <div class="num"><span class="count" data-to="4">4</span><span class="u">&nbsp;min</span></div>
         <div class="lbl">Average reply from a real human on WhatsApp, 7&nbsp;days a week.</div>
       </div>
     </div>
@@ -684,6 +684,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=7"></script>
+  <script src="main.js?v=10"></script>
 </body>
 </html>

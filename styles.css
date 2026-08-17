@@ -532,10 +532,16 @@ em {
 /* ============================================================
    How it works — steps
    ============================================================ */
-.steps { display: flex; flex-direction: column; gap: 32px; }
+.steps { display: flex; flex-direction: column; gap: 0; }
 .step {
+  position: relative;
   display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr); gap: 40px; align-items: center;
-  border-top: 1px solid var(--divider); padding-top: 48px;
+  border-top: 1px solid var(--divider);
+  padding: 44px 28px;
+  margin: 0 -28px;   /* content stays flush with the container; the hover card fills the gutter */
+  transition: transform .32s cubic-bezier(.16, 1, .3, 1), background-color .32s ease-out,
+              box-shadow .32s ease-out, border-color .32s ease-out, border-radius .32s ease-out,
+              opacity .7s cubic-bezier(.16, 1, .3, 1);
 }
 .step-title { display: flex; align-items: center; gap: 18px; }
 .step-num {
@@ -948,6 +954,133 @@ em {
 .cta-block .cta-reassure .sep { background: var(--on-accent); opacity: .4; }
 
 /* ============================================================
+   Interaction & motion
+   ============================================================ */
+
+/* --- Orchestrated hero entrance (runs on load, above the fold) --- */
+@keyframes riseIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes fadeScaleIn { from { opacity: 0; transform: translateY(16px) scale(.985); } to { opacity: 1; transform: none; } }
+.hero-enter .hero-intro > * { animation: riseIn .7s cubic-bezier(.16, 1, .3, 1) both; }
+.hero-enter .hero-intro > *:nth-child(1) { animation-delay: .05s; }
+.hero-enter .hero-intro > *:nth-child(2) { animation-delay: .13s; }
+.hero-enter .hero-intro > *:nth-child(3) { animation-delay: .21s; }
+.hero-enter .hero-intro > *:nth-child(4) { animation-delay: .29s; }
+.hero-enter .hero-intro > *:nth-child(5) { animation-delay: .37s; }
+.hero-enter .hero-visual-wrap { animation: fadeScaleIn .9s cubic-bezier(.16, 1, .3, 1) .18s both; }
+
+/* --- Ambient loops --- */
+@keyframes floatL { 0%, 100% { transform: rotate(-5deg) translateY(0); } 50% { transform: rotate(-5deg) translateY(-10px); } }
+@keyframes floatR { 0%, 100% { transform: rotate(5deg) translateY(0); } 50% { transform: rotate(5deg) translateY(-8px); } }
+.phone--left { animation: floatL 7s ease-in-out infinite; }
+.phone--right { animation: floatR 8s ease-in-out .6s infinite; }
+
+@keyframes blobDrift { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-16px) scale(1.03); } }
+.blob { animation: blobDrift 12s ease-in-out infinite; }
+
+/* Pulsing ring behind the bridge hub — theme-aware (uses --lime) */
+.bridge-hub { isolation: isolate; }
+.bridge-hub::before {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: var(--lime); z-index: -1;
+  animation: hubRing 2.8s cubic-bezier(.16, 1, .3, 1) infinite;
+}
+@keyframes hubRing { 0% { transform: scale(1); opacity: .4; } 70% { transform: scale(1.9); opacity: 0; } 100% { opacity: 0; } }
+
+/* Twinkling sparkles in the final CTA */
+@keyframes twinkle { 0%, 100% { opacity: .4; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.12); } }
+.cta-block .sparkle { animation: twinkle 3.4s ease-in-out infinite; }
+.cta-block .sparkle:nth-of-type(2) { animation-delay: .6s; }
+.cta-block .sparkle:nth-of-type(3) { animation-delay: 1.1s; }
+.cta-block .sparkle:nth-of-type(4) { animation-delay: 1.7s; }
+
+/* --- Gesture micro-interactions (hover / focus) --- */
+.problem-card, .cust-step {
+  transition: transform .22s cubic-bezier(.16, 1, .3, 1), border-top-color .22s ease-out;
+}
+.problem-card:hover, .cust-step:hover { transform: translateY(-5px); border-top-color: var(--forest); }
+.problem-card .icon-tile { transition: background .2s ease-out, color .2s ease-out, transform .2s ease-out; }
+.problem-card:hover .icon-tile { background: var(--forest); color: var(--lime); transform: scale(1.06); }
+
+.reason { transition: border-top-color .18s ease-out, transform .2s cubic-bezier(.16, 1, .3, 1); }
+.reason:hover { transform: translateY(-5px); }
+.reason .tile { transition: background .2s ease-out, color .2s ease-out; }
+.reason:hover .tile { background: var(--lime); color: var(--on-accent); }
+
+.plan { transition: transform .22s cubic-bezier(.16, 1, .3, 1), box-shadow .22s ease-out, border-color .22s ease-out; }
+.plan:hover { transform: translateY(-6px); box-shadow: var(--shadow-pop); border-color: var(--forest); }
+
+/* How it works — each step pops up and inverts to a dark colour scheme */
+.step-title span, .step-body > p, .step-num, .step-demo, .step-demo * {
+  transition: background-color .3s ease-out, color .3s ease-out, border-color .3s ease-out, transform .3s cubic-bezier(.16, 1, .3, 1);
+}
+.step:hover {
+  transform: translateY(-8px);
+  background-color: var(--forest);
+  border-top-color: transparent;
+  border-radius: var(--radius-block);
+  box-shadow: var(--shadow-pop);
+  z-index: 1;
+}
+.step:hover .step-title span:last-child { color: var(--paper); }
+.step:hover .step-body > p { color: rgba(242, 236, 224, .78); }
+.step:hover .step-num { transform: scale(1.06); }
+.step:hover .step-num--01 { background: var(--paper); color: var(--forest); }
+/* Invert the demo panel that sits inside the step */
+.step:hover .step-demo { background: var(--forest-hover); border-color: rgba(242, 236, 224, .18); }
+.step:hover .demo-label,
+.step:hover .demo-send-to,
+.step:hover .pts-to { color: rgba(242, 236, 224, .6); }
+.step:hover .demo-row,
+.step:hover .demo-send-count,
+.step:hover .pts-added,
+.step:hover .demo-chip { color: var(--paper); }
+.step:hover .demo-bar,
+.step:hover .demo-progress,
+.step:hover .demo-chip,
+.step:hover .qr-tile { background: rgba(242, 236, 224, .14); }
+
+@media (prefers-reduced-motion: reduce) {
+  .step:hover { transform: none; }
+  .step:hover .step-num { transform: none; }
+}
+
+.store-badge { transition: background .15s ease-out, transform .18s ease-out; }
+.store-badge:hover { transform: translateY(-2px); }
+
+.footer-social a { transition: color .15s ease-out, transform .15s ease-out; }
+.footer-social a:hover { transform: translateY(-2px) scale(1.12); }
+
+/* Button lift + theme-aware glow */
+.btn--primary, .btn--dark {
+  transition: background .15s ease-out, transform .12s ease-out, color .15s ease-out, box-shadow .22s ease-out;
+}
+.btn--primary:hover, .btn--dark:hover { transform: translateY(-2px); box-shadow: var(--shadow-pop); }
+.btn--primary:active, .btn--dark:active { transform: translateY(0) scale(.98); }
+
+/* Animated nav underline (desktop links only, not the menu button) */
+.nav-links a:not(.btn) { position: relative; }
+.nav-links a:not(.btn)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 2px;
+  background: var(--lime); border-radius: 2px;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .28s cubic-bezier(.16, 1, .3, 1);
+}
+.nav-links a:not(.btn):hover::after { transform: scaleX(1); }
+
+/* Cross-fade when a features tab / app panel swaps in */
+.panel-in { animation: fadeScaleIn .42s cubic-bezier(.16, 1, .3, 1) both; }
+.app-panel:not([hidden]) { animation: fadeScaleIn .45s cubic-bezier(.16, 1, .3, 1) both; }
+
+/* Count-up numerals shouldn't jump width mid-tween */
+.proof-item .num .count { font-variant-numeric: tabular-nums lining-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .phone--left, .phone--right, .blob, .bridge-hub::before, .cta-block .sparkle,
+  .hero-enter .hero-intro > *, .hero-enter .hero-visual-wrap,
+  .panel-in, .app-panel:not([hidden]) { animation: none !important; }
+}
+
+/* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 1080px) {
@@ -1005,7 +1138,7 @@ em {
   .bridge-track { width: 100%; max-width: 420px; height: 150px; }
   .pillars { grid-template-columns: 1fr; gap: 32px; }
 
-  .step { grid-template-columns: 1fr; gap: 24px; }
+  .step { grid-template-columns: 1fr; gap: 24px; padding: 36px 18px; margin: 0 -18px; }
   .step-body { grid-template-columns: 1fr; gap: 24px; }
   .step-demo { max-width: 340px; }
 
