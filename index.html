@@ -21,7 +21,7 @@
   <script>(function(){try{var t=localStorage.getItem('fulcrum-theme');if(t==='blue')document.documentElement.setAttribute('data-theme','blue');else if(t==='warm')document.documentElement.removeAttribute('data-theme');}catch(e){}})();</script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=Geist:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
   <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:0;background:var(--forest);color:var(--cream);padding:12px 18px;border-radius:0 0 10px 0;z-index:100" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">Skip to content</a>
@@ -219,8 +219,14 @@
         <div class="bridge-track">
           <svg viewBox="0 0 600 180" preserveAspectRatio="none" width="100%" height="180" class="path" aria-hidden="true">
             <path d="M10 150 Q 300 -10 590 150" fill="none" stroke="var(--lime)" stroke-width="2" stroke-dasharray="1 12" stroke-linecap="round" opacity=".85"/>
-            <circle class="mover" r="5" fill="var(--lime)"><animateMotion dur="3.2s" repeatCount="indefinite" path="M10 150 Q 300 -10 590 150"/></circle>
-            <circle class="mover" r="5" fill="var(--coral)"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M10 150 Q 300 -10 590 150"/></circle>
+            <circle class="mover" r="5" fill="var(--lime)">
+              <animateMotion dur="3.8s" repeatCount="indefinite" path="M10 150 Q 300 -10 590 150"/>
+              <animate attributeName="opacity" dur="3.8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.14;0.86;1"/>
+            </circle>
+            <circle class="mover" r="5" fill="var(--coral)">
+              <animateMotion dur="3.8s" begin="1.9s" repeatCount="indefinite" path="M10 150 Q 300 -10 590 150"/>
+              <animate attributeName="opacity" dur="3.8s" begin="1.9s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.14;0.86;1"/>
+            </circle>
           </svg>
           <div class="bridge-hub">F</div>
           <div class="bridge-caption">OTP · QR · Points · Offers</div>
@@ -684,6 +690,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=10"></script>
+  <script src="main.js?v=11"></script>
 </body>
 </html>
