@@ -9,7 +9,7 @@ export default function Footer() {
               Fulcrum<span className="dot">.</span>
             </div>
             <p>The CRM for retail businesses and service providers.</p>
-            <div className="made">Made in Bangalore, IN</div>
+            <div className="made">Proudly made in India, by Indians, and for Indians.</div>
           </div>
           <div className="footer-col">
             <div className="title">Product</div>
