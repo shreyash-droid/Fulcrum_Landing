@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 2333 2402" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd">
+ <defs>
+  <linearGradient id="m0" gradientUnits="userSpaceOnUse" x1="1144.14" y1="1418.69" x2="485.95" y2="1985.35">
+   <stop offset="0" style="stop-color:#EF7F1A"/>
+   <stop offset="0.45098" style="stop-color:#FEFEFE"/>
+   <stop offset="1" style="stop-color:#009846"/>
+  </linearGradient>
+  <linearGradient id="m1" gradientUnits="userSpaceOnUse" x1="910.06" y1="2430.22" x2="1268.05" y2="1435.84">
+   <stop offset="0" style="stop-color:#2CA2DC"/>
+   <stop offset="1" style="stop-color:#2A4D9E"/>
+  </linearGradient>
+  <linearGradient id="m2" gradientUnits="userSpaceOnUse" xlink:href="#m1" x1="1425.87" y1="533.84" x2="1800.84" y2="1784.75"/>
+  <linearGradient id="m3" gradientUnits="userSpaceOnUse" xlink:href="#m0" x1="1167.01" y1="1311.06" x2="1174.65" y2="384.07"/>
+  <linearGradient id="m4" gradientUnits="userSpaceOnUse" xlink:href="#m0" x1="1172.09" y1="1354.71" x2="1859.1" y2="1954.42"/>
+  <linearGradient id="m5" gradientUnits="userSpaceOnUse" xlink:href="#m1" x1="-24.58" y1="1677.55" x2="1113.85" y2="985.05"/>
+ </defs>
+ <polygon fill="url(#m5)" points="1167,1350 1167,0 0,2402 "/>
+ <polygon fill="url(#m1)" points="1167,0 1167,1350 2333,2402 "/>
+ <polygon fill="url(#m2)" points="1167,1350 0,2402 2333,2402 "/>
+ <polygon fill="url(#m0)" points="107,2312 1172,1395 1172,1306 "/>
+ <polygon fill="url(#m4)" points="2238,2312 1172,1395 1172,1306 "/>
+ <polygon fill="url(#m3)" points="1166,198 1167,439 1168,198 1208,1353 1167,1311 1126,1353 "/>
+</svg>

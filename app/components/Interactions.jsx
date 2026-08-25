@@ -113,7 +113,7 @@ export default function Interactions() {
     }
 
     /* ---------- Features: tabs + dashboard ---------- */
-    var TABS = ["Customer management", "Offers and notifications", "Loyalty", "Referrals", "Analytics", "Support"];
+    var TABS = ["Customer management", "Offers and notifications", "Loyalty", "Referrals", "Analytics"];
 
     function stat(i, label, value, delta) {
       var bg = ["var(--forest)", "var(--coral)", "var(--stat-light-bg)"][i];
@@ -176,15 +176,6 @@ export default function Interactions() {
         accent: "var(--forest)", footer: "View full report →",
         dual: true, legend: [["New", "var(--coral)"], ["Repeat", "var(--forest)"]],
         bars: [["Mon", 40, 62], ["Tue", 44, 66], ["Wed", 38, 72], ["Thu", 50, 70], ["Fri", 46, 78], ["Sat", 58, 86], ["Sun", 54, 90]],
-      },
-      Support: {
-        title: "Real humans, on WhatsApp, in your language.",
-        desc: "No chatbots. No tickets. Talk to someone who’s actually set up stores like yours.",
-        checklist: ["WhatsApp support, 7 days", "Hindi, English, Tamil, Marathi", "Free onboarding call"],
-        dashLabel: "Support · Last 7 days",
-        stats: [["Avg response", "24 hr", "or less"], ["CSAT", "4.9", "out of 5"], ["Coverage", "7 days", "a week"]],
-        accent: "var(--forest)", footer: "Contact support →",
-        bars: [["Hindi", 90, "46%"], ["English", 64, "32%"], ["Tamil", 30, "14%"], ["Marathi", 18, "8%"]],
       },
     };
 
