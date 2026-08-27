@@ -10,39 +10,47 @@ export default function ForCustomers() {
           <h2 style={{ maxWidth: "16ch", marginBottom: "20px" }}>
             Shopping local <em>just got rewarding.</em>
           </h2>
-          <p className="lead" style={{ marginBottom: "72px", maxWidth: "42ch" }}>
-            Your customers download the Fulcrum app once, then earn points at every Fulcrum partner store in their pin code.
-          </p>
+          <p className="lead" style={{ marginBottom: "72px", maxWidth: "48ch" }}>
+            Your Customer downloads Fulcrum Customer App,  registers once, transacts at Fulcrum Network partner stores and begins earning wallet cash right from the word Go!          </p>
         </div>
 
         <div className="cust-steps">
-          <div className="cust-step reveal">
-            <div style={{ color: "var(--lime)" }}>
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="9" /><polygon points="15.5,8.5 10.8,10.8 8.5,15.5 13.2,13.2" />
-              </svg>
+          <article className="cust-step reveal">
+            <div className="cust-step-head">
+              <span className="cust-step-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="9" /><polygon points="15.5,8.5 10.8,10.8 8.5,15.5 13.2,13.2" />
+                </svg>
+              </span>
+              <span className="cust-step-num">01</span>
             </div>
             <div className="title">Discover</div>
             <div className="body">Featured stores by pin code.</div>
-          </div>
-          <div className="cust-step reveal" style={{ transitionDelay: ".06s" }}>
-            <div style={{ color: "var(--coral)" }}>
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="12,3 14.6,8.6 20.5,9.2 16,13.2 17.4,19 12,15.9 6.6,19 8,13.2 3.5,9.2 9.4,8.6" />
-              </svg>
+          </article>
+          <article className="cust-step reveal" style={{ transitionDelay: ".06s" }}>
+            <div className="cust-step-head">
+              <span className="cust-step-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12,3 14.6,8.6 20.5,9.2 16,13.2 17.4,19 12,15.9 6.6,19 8,13.2 3.5,9.2 9.4,8.6" />
+                </svg>
+              </span>
+              <span className="cust-step-num">02</span>
             </div>
             <div className="title">Earn</div>
             <div className="body">Cash credits on every purchase.</div>
-          </div>
-          <div className="cust-step reveal" style={{ transitionDelay: ".12s" }}>
-            <div style={{ color: "var(--forest)" }}>
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3.5" y="9" width="17" height="11.5" rx="1.5" /><path d="M3 9h18" /><path d="M12 9v11.5" /><path d="M12 9S10.5 3.5 7.5 5c-2 1 .5 4 4.5 4z" /><path d="M12 9s1.5-5.5 4.5-4c2 1-.5 4-4.5 4z" />
-              </svg>
+          </article>
+          <article className="cust-step reveal" style={{ transitionDelay: ".12s" }}>
+            <div className="cust-step-head">
+              <span className="cust-step-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3.5" y="9" width="17" height="11.5" rx="1.5" /><path d="M3 9h18" /><path d="M12 9v11.5" /><path d="M12 9S10.5 3.5 7.5 5c-2 1 .5 4 4.5 4z" /><path d="M12 9s1.5-5.5 4.5-4c2 1-.5 4-4.5 4z" />
+                </svg>
+              </span>
+              <span className="cust-step-num">03</span>
             </div>
             <div className="title">Redeem</div>
             <div className="body">For gift vouchers, coupons and deals.</div>
-          </div>
+          </article>
         </div>
 
         <div className="shop-strip reveal">
@@ -84,7 +92,7 @@ export default function ForCustomers() {
             </button>
           </div>
 
-          {/* BUSINESS APP — primary */}
+          {/* BUSINESS APP - primary */}
           <div className="app-panel" data-app="business" id="panel-business" role="tabpanel" aria-labelledby="tab-business">
             <div className="reward-phone" role="img" aria-label="Fulcrum business app dashboard: revenue this month and recent visitors">
               <div className="screen">
@@ -108,7 +116,7 @@ export default function ForCustomers() {
             </div>
             <div className="cust-cta">
               <h3>Your storefront, in one app.</h3>
-              <p>Know who walked in, reward every visit, and send the weekly offer that brings quiet regulars back — right from your phone, in minutes a day.</p>
+              <p>Know who walked in, reward every visit, and send the weekly offer that brings quiet regulars back - right from your phone, in minutes a day.</p>
               <div style={{ marginBottom: "24px" }}>
                 <a href="#" className="btn btn--primary btn--lg">
                   Download the business app{" "}

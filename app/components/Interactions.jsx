@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 /* ============================================================
-   Fulcrum — landing page interactions (ported from main.js)
+   Fulcrum - landing page interactions (ported from main.js)
    Runs once after mount and wires up DOM-based behaviour on the
    server-rendered markup (nav, theme, FAQ, feature tabs, reveals…).
    ============================================================ */
@@ -133,7 +133,7 @@ export default function Interactions() {
     var F = {
       "Customer management": {
         title: "Know every customer who walks in.",
-        desc: "Profiles, visit history, preferences, spend — all in one place. No spreadsheet, no guesswork.",
+        desc: "Profiles, visit history, preferences, spend - all in one place. No spreadsheet, no guesswork.",
         checklist: ["Auto-tagged customer profiles", "Birthday & anniversary reminders", "Notes & preferences per customer"],
         dashLabel: "Customer profiles · Sharma Sweets",
         stats: [["Profiles", "1,284", "↑ 126 new"], ["Auto-tagged", "96%", "of visits"], ["Avg spend", "₹840", "↑ 12%"]],
@@ -142,7 +142,7 @@ export default function Interactions() {
       },
       "Offers and notifications": {
         title: "Send offers that actually get used.",
-        desc: "Schedule SMS, WhatsApp, or in-app offers. Target by spend, frequency, or last visit — not spray-and-pray.",
+        desc: "Schedule SMS, WhatsApp, or in-app offers. Target by spend, frequency, or last visit - not spray-and-pray.",
         checklist: ["WhatsApp and SMS campaigns", "Segment by behaviour", "Track redemption in real-time"],
         dashLabel: "Campaign performance · This week",
         stats: [["Sent", "3,200", "this week"], ["Redeemed", "41%", "↑ 9 pts"], ["Top channel", "WhatsApp", "74% open"]],
@@ -151,8 +151,8 @@ export default function Interactions() {
       },
       Loyalty: {
         title: "Loyalty programs that run themselves.",
-        desc: "Points, stamps, tiers — design a program in minutes. Customers earn on every visit, you earn every return.",
-        checklist: ["Points, stamps, or tier-based", "Auto-expiry & reminders", "Digital card — no paper"],
+        desc: "Points, stamps, tiers - design a program in minutes. Customers earn on every visit, you earn every return.",
+        checklist: ["Points, stamps, or tier-based", "Auto-expiry & reminders", "Digital card - no paper"],
         dashLabel: "Loyalty program · Live",
         stats: [["Members", "612", "↑ 48"], ["Redemption", "58%", "of points"], ["Repeat lift", "2.3×", "vs non-members"]],
         accent: "var(--sky)", footer: "Manage program →",
@@ -169,7 +169,7 @@ export default function Interactions() {
       },
       Analytics: {
         title: "Insights that actually change decisions.",
-        desc: "See what’s working — and what isn’t. Repeat rate, top customers, best offers, all on one screen.",
+        desc: "See what’s working - and what isn’t. Repeat rate, top customers, best offers, all on one screen.",
         checklist: ["Repeat vs new customer ratio", "Offer performance tracking", "Weekly digest via WhatsApp"],
         dashLabel: "Live dashboard · This week at Sharma Sweets",
         stats: [["Visits", "482", "↑ 18%"], ["Repeat", "68%", "↑ 8 pts"], ["Revenue", "₹1.2L", "↑ 22%"]],

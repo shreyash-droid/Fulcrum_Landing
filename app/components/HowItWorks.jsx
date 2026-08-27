@@ -7,7 +7,7 @@ export default function HowItWorks() {
             <span className="dot"></span> How it works
           </div>
           <h2 style={{ maxWidth: "16ch", marginBottom: "72px" }}>
-            From setup to first sale — <em>in a week.</em>
+            From setup to first sale - <em>in a week.</em>
           </h2>
         </div>
 
@@ -55,7 +55,7 @@ export default function HowItWorks() {
               <span>Send targeted offers</span>
             </div>
             <div className="step-body">
-              <p>Pick a segment, write your message, and send — over WhatsApp or SMS.</p>
+              <p>Pick a segment, write your message, and send - over WhatsApp or SMS.</p>
               <div className="step-demo">
                 <div className="demo-label">New offer</div>
                 <div className="demo-send-to">Send to</div>

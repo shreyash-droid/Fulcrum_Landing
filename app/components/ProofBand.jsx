@@ -22,9 +22,9 @@ export default function ProofBand() {
         </div>
         <div className="proof-item reveal" style={{ transitionDelay: ".18s" }}>
           <div className="num">
-            24&ndash;48<span className="u">&nbsp;hr</span>
+            24-48<span className="u">&nbsp;hr</span>
           </div>
-          <div className="lbl">Typical reply from a real human — on call or WhatsApp. Assured.</div>
+          <div className="lbl">Typical reply from a real human - on call or WhatsApp. Assured.</div>
         </div>
       </div>
     </section>

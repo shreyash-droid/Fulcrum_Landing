@@ -1,5 +1,5 @@
 /* ============================================================
-   Fulcrum — landing page
+   Fulcrum - landing page
    Warm-editorial design system (tokens from the Fulcrum kit)
    ============================================================ */
 
@@ -19,7 +19,7 @@
   --divider: #D4CBB8;
   --focus-ring: rgba(196, 229, 56, .55);
 
-  /* Semantic — how text/icons behave on accent + dark surfaces (themed) */
+  /* Semantic - how text/icons behave on accent + dark surfaces (themed) */
   --on-accent: var(--forest);        /* text/icon on a solid accent (lime) fill */
   --on-accent-soft: var(--forest-hover);
   --stat-light-bg: var(--lime);      /* the bright/light dashboard stat card */
@@ -29,8 +29,8 @@
   --muted-on-sage: #4C5A50;          /* muted text that sits on the sage surface (AA on sage) */
 
   /* Type */
-  --font-display: 'Work Sans', system-ui, -apple-system, sans-serif;  /* headings, roman — matches the app UI */
-  --font-accent: 'Playfair Display', Georgia, serif;                  /* heading italics — light, elegant contrast */
+  --font-display: 'Work Sans', system-ui, -apple-system, sans-serif;  /* headings, roman - matches the app UI */
+  --font-accent: 'Playfair Display', Georgia, serif;                  /* heading italics - light, elegant contrast */
   --font-feature: 'Geist', system-ui, -apple-system, sans-serif;  /* readable sans for feature titles + data */
   --font-body: 'Geist', system-ui, -apple-system, sans-serif;
 
@@ -48,7 +48,7 @@
   /* Layout */
   --container: 1280px;
   --gutter: 32px;
-  --section-y: 140px;
+  --section-y: 100px;
 }
 
 /* ---------- Blue palette (Fulcrum Retail app) ----------
@@ -141,7 +141,7 @@ h3 {
   font-weight: 600;
   letter-spacing: -.02em;
 }
-/* Playfair italic accent — nudged to 500 so it holds its own against the
+/* Playfair italic accent - nudged to 500 so it holds its own against the
    lighter (600) roman headings; the pairing reads calmer, less high-contrast. */
 em {
   font-family: var(--font-accent);
@@ -162,6 +162,14 @@ em {
   padding: 0 var(--gutter);
 }
 .section { padding: var(--section-y) 0; }
+/* Two stacked light sections would otherwise double their padding into one
+   oversized gap - collapse the seam so every boundary keeps a single, uniform
+   rhythm. Sections that change surface (forest / gradient) keep their own top
+   padding, since that space sits inside the coloured block. */
+.section:not(.section--forest):not(.section--gradient)
+  + .section:not(.section--forest):not(.section--gradient) {
+  padding-top: 0;
+}
 .section--paper { background: var(--paper); }
 .section--forest { background: var(--forest); color: var(--paper); }
 .section--gradient {
@@ -291,7 +299,7 @@ em {
 }
 .nav-actions .login { font: 500 14px var(--font-body); color: var(--forest); white-space: nowrap; }
 
-/* Theme switch — Warm / Blue. Dot colours are fixed (not themed) so each
+/* Theme switch - Warm / Blue. Dot colours are fixed (not themed) so each
    swatch always represents its palette. */
 .theme-switch {
   display: inline-flex; align-items: center; gap: 5px;
@@ -312,7 +320,7 @@ em {
   box-shadow: 0 0 0 2px var(--cream), 0 0 0 3.5px var(--ink-muted);
 }
 
-/* Menu-only links — hidden on desktop, revealed inside the mobile menu. */
+/* Menu-only links - hidden on desktop, revealed inside the mobile menu. */
 .nav-menu-login, .nav-menu-cta { display: none; }
 .nav-toggle {
   display: none;
@@ -468,7 +476,7 @@ em {
 .section-intro { margin: 0 0 64px; max-width: 44ch; }
 .section-head h2 { max-width: 28ch; margin-bottom: 20px; }
 
-/* Shared icon tile — the sage chip used to mark each item */
+/* Shared icon tile - the sage chip used to mark each item */
 .icon-tile {
   width: 52px; height: 52px; border-radius: 14px; background: var(--sage);
   display: flex; align-items: center; justify-content: center;
@@ -485,7 +493,7 @@ em {
 .problem-card .body { font: 400 15px/1.55 var(--font-body); color: var(--ink-muted); max-width: 32ch; }
 
 /* ============================================================
-   Solution (dark) — bridge + pillars
+   Solution (dark) - bridge + pillars
    ============================================================ */
 .section--forest h2 { color: var(--paper); max-width: 26ch; margin-bottom: 20px; }
 .section--forest h2 em { color: var(--accent-on-dark); }
@@ -519,7 +527,7 @@ em {
   font: 600 12px var(--font-body); letter-spacing: .14em; text-transform: uppercase;
   color: rgba(242, 236, 224, .8); white-space: nowrap;
 }
-/* ARM philosophy — growth flywheel */
+/* ARM philosophy - growth flywheel */
 .arm { border-top: 1px solid rgba(242, 236, 224, .16); padding-top: 56px; }
 .arm-head { text-align: center; max-width: 60ch; margin: 0 auto 48px; }
 .arm-kicker {
@@ -581,7 +589,7 @@ em {
 @keyframes arm-spin { to { transform: rotate(360deg); } }
 
 /* ============================================================
-   How it works — steps
+   How it works - steps
    ============================================================ */
 .steps { display: flex; flex-direction: column; gap: 0; }
 .step {
@@ -634,7 +642,7 @@ em {
 .demo-send { display: inline-flex; align-items: center; gap: 6px; background: var(--lime); color: var(--on-accent); border-radius: 999px; padding: 9px 18px; font: 500 13px var(--font-body); }
 
 /* ============================================================
-   Features — tabs + dashboard
+   Features - tabs + dashboard
    ============================================================ */
 .feature-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
 .feature-tab {
@@ -720,10 +728,29 @@ em {
 .pin-field svg { position: absolute; color: var(--divider); opacity: .5; }
 .customers .container { position: relative; z-index: 1; }
 
-.cust-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 96px; }
-.cust-step { display: flex; flex-direction: column; gap: 16px; border-top: 1px solid var(--divider); padding-top: 32px; }
+.cust-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 88px; }
+.cust-step {
+  display: flex; flex-direction: column; gap: 14px;
+  border-top: 2px solid var(--forest);
+  padding-top: 26px;
+}
+.cust-step-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.cust-step-icon {
+  width: 54px; height: 54px; flex: none; border-radius: 15px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--sage); color: var(--forest);
+  transition: background .22s ease-out, color .22s ease-out, transform .22s cubic-bezier(.16, 1, .3, 1);
+}
+.cust-step-num {
+  font: 700 clamp(2rem, 3.2vw, 2.6rem) var(--font-display);
+  letter-spacing: -.03em; line-height: 1; color: var(--divider);
+  font-variant-numeric: tabular-nums lining-nums;
+  transition: color .22s ease-out;
+}
 .cust-step .title { font: 600 22px var(--font-display); letter-spacing: -.01em; color: var(--forest); }
 .cust-step .body { font: 400 16px/1.55 var(--font-body); color: var(--ink-muted); max-width: 30ch; }
+.cust-step:hover .cust-step-icon { background: var(--forest); color: var(--lime); transform: scale(1.06); }
+.cust-step:hover .cust-step-num { color: var(--forest); }
 
 .shop-strip {
   display: flex; align-items: center; justify-content: center; gap: 36px;
@@ -843,7 +870,7 @@ em {
 .cta-download .label { font: 600 12px var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--on-accent); opacity: .7; margin-bottom: 16px; }
 .cta-download .badges { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 
-/* Waitlist — two-column split (heading left, form right) */
+/* Waitlist - two-column split (heading left, form right) */
 .cta-block--split {
   display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
   align-items: center; text-align: left; padding: 72px;
@@ -960,7 +987,7 @@ em {
 }
 
 /* ============================================================
-   Testimonials — voices from the counter
+   Testimonials - voices from the counter
    ============================================================ */
 .tmony-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .tmony {
@@ -989,13 +1016,13 @@ em {
 .tmony .who .role { font: 400 13px var(--font-body); color: var(--ink-muted); margin-top: 1px; }
 
 /* ============================================================
-   Pricing teaser — free to start
+   Pricing teaser - free to start
    ============================================================ */
 .pricing-head { text-align: center; margin-bottom: 56px; }
 .pricing-head h2 { max-width: 20ch; margin: 0 auto 16px; }
 .pricing-head .lead { max-width: 54ch; margin: 0 auto; }
 
-/* Three duration plans — same product, longer commit = lower daily cost */
+/* Three duration plans - same product, longer commit = lower daily cost */
 .plans {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px; max-width: 1040px; margin: 0 auto; align-items: stretch;
@@ -1078,7 +1105,7 @@ em {
 @keyframes blobDrift { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-16px) scale(1.03); } }
 .blob { animation: blobDrift 12s ease-in-out infinite; }
 
-/* Pulsing ring behind the bridge hub — theme-aware (uses --lime) */
+/* Pulsing ring behind the bridge hub - theme-aware (uses --lime) */
 .bridge-hub { isolation: isolate; }
 .bridge-hub::before {
   content: ""; position: absolute; inset: 0; border-radius: 50%;
@@ -1110,7 +1137,7 @@ em {
 .plan { transition: transform .22s cubic-bezier(.16, 1, .3, 1), box-shadow .22s ease-out, border-color .22s ease-out; }
 .plan:hover { transform: translateY(-6px); box-shadow: var(--shadow-pop); border-color: var(--forest); }
 
-/* How it works — each step pops up and inverts to a dark colour scheme */
+/* How it works - each step pops up and inverts to a dark colour scheme */
 .step-title span, .step-body > p, .step-num, .step-demo, .step-demo * {
   transition: background-color .3s ease-out, color .3s ease-out, border-color .3s ease-out, transform .3s cubic-bezier(.16, 1, .3, 1);
 }
@@ -1185,7 +1212,7 @@ em {
    Responsive
    ============================================================ */
 @media (max-width: 1080px) {
-  :root { --section-y: 112px; }
+  :root { --section-y: 84px; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .feature-copy { padding: 44px 36px; }
   .feature-dash { padding: 32px; }
@@ -1279,7 +1306,7 @@ em {
 }
 
 @media (max-width: 620px) {
-  :root { --section-y: 88px; }
+  :root { --section-y: 68px; }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr; }
   .proof-band .container { grid-template-columns: 1fr; }

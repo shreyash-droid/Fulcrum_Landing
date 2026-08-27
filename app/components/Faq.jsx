@@ -39,7 +39,7 @@ export default function Faq() {
               <span className="plus" aria-hidden="true">+</span>
             </button>
             <div className="faq-a">
-              <p>About 15&nbsp;minutes. Register with a few business details and you&rsquo;re online. Customers in your pin code see you instantly on their app. Once they visit and transact, they become your customers — pamper them with offers and you&rsquo;ve got them hooked for life.</p>
+              <p>About 15&nbsp;minutes. Register with a few business details and you&rsquo;re online. Customers in your pin code see you instantly on their app. Once they visit and transact, they become your customers - pamper them with offers and you&rsquo;ve got them hooked for life.</p>
             </div>
           </div>
           <div className="faq-item">
@@ -48,7 +48,7 @@ export default function Faq() {
               <span className="plus" aria-hidden="true">+</span>
             </button>
             <div className="faq-a">
-              <p>If you run a business that serves customers — existing and new — Fulcrum fits like a glove. Cafés, salons, boutiques, pet-supply stores, bakeries and more can reap the full power of Fulcrum Retail.</p>
+              <p>If you run a business that serves customers - existing and new - Fulcrum fits like a glove. Cafés, salons, boutiques, pet-supply stores, bakeries and more can reap the full power of Fulcrum Retail.</p>
             </div>
           </div>
           <div className="faq-item">

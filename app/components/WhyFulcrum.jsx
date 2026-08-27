@@ -45,7 +45,7 @@ export default function WhyFulcrum() {
               </svg>
             </div>
             <div className="r-title">Responsive, timely support</div>
-            <div className="r-body">Call, WhatsApp or email us — a real human replies quickly. Assured.</div>
+            <div className="r-body">Call, WhatsApp or email us - a real human replies quickly. Assured.</div>
           </div>
         </div>
       </div>

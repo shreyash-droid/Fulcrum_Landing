@@ -6,15 +6,15 @@ const FAVICON =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231B3A2E'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23FBF8F1' text-anchor='middle'%3EF%3C/text%3E%3Ccircle cx='24.5' cy='22' r='2.2' fill='%23E85D3C'/%3E%3C/svg%3E";
 
 export const metadata = {
-  title: "Fulcrum — The CRM for retail businesses & service providers",
+  title: "Fulcrum - The CRM for retail businesses & service providers",
   description:
-    "Fulcrum is a hyper-local CRM for retail counters. Acquire customers, reward every visit, and bring regulars back — all from one refreshingly simple platform.",
+    "Fulcrum is a hyper-local CRM for retail counters. Acquire customers, reward every visit, and bring regulars back - all from one refreshingly simple platform.",
   icons: { icon: FAVICON },
   openGraph: {
     type: "website",
-    title: "Fulcrum — The CRM for retail businesses & service providers",
+    title: "Fulcrum - The CRM for retail businesses & service providers",
     description:
-      "Acquire customers. Retain relationships. Grow repeat business — all from one refreshingly simple platform.",
+      "Acquire customers. Retain relationships. Grow repeat business - all from one refreshingly simple platform.",
     siteName: "Fulcrum",
   },
 };

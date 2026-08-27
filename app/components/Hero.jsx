@@ -11,7 +11,7 @@ export default function Hero() {
               The CRM built for retail businesses <em>and service providers.</em>
             </h1>
             <p className="lead">
-              Acquire customers. Retain relationships. Grow repeat business — all from one refreshingly simple platform.
+              Acquire customers. Retain relationships. Grow repeat business - all from one refreshingly simple platform.
             </p>
             <div className="hero-cta">
               <a href="#waitlist" className="btn btn--primary btn--lg">
@@ -30,8 +30,6 @@ export default function Hero() {
               <span>No forced hardware</span>
               <span className="sep" aria-hidden="true"></span>
               <span>Live in 15&nbsp;minutes</span>
-              <span className="sep" aria-hidden="true"></span>
-              <span>Cancel anytime</span>
             </div>
           </div>
 

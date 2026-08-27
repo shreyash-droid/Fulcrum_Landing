@@ -1,4 +1,4 @@
-/* Placeholder quotes — replace with real, consented customer testimonials before launch. */
+/* Placeholder quotes - replace with real, consented customer testimonials before launch. */
 export default function Testimonials() {
   return (
     <section className="section section--paper" id="stories">
@@ -10,7 +10,7 @@ export default function Testimonials() {
           <h2>
             Business owners, <em>in their own words.</em>
           </h2>
-          <p className="lead section-intro">Real relationships, more repeat visits, no spreadsheet in sight — anywhere.</p>
+          <p className="lead section-intro">Real relationships, more repeat visits, no spreadsheet in sight - anywhere.</p>
         </div>
         <div className="tmony-grid">
           <figure className="tmony reveal">
@@ -29,7 +29,7 @@ export default function Testimonials() {
           <figure className="tmony reveal" style={{ transitionDelay: ".06s" }}>
             <div className="mark" aria-hidden="true">&ldquo;</div>
             <blockquote>
-              Setup took one chai break. No hardware, no training day &mdash; <b>we were scanning customers the same afternoon.</b>
+              Setup took one chai break. No hardware, no training day - <b>we were scanning customers the same afternoon.</b>
             </blockquote>
             <figcaption className="who">
               <span className="avatar" style={{ background: "var(--coral)" }}>AS</span>
@@ -42,7 +42,7 @@ export default function Testimonials() {
           <figure className="tmony reveal" style={{ transitionDelay: ".12s" }}>
             <div className="mark" aria-hidden="true">&ldquo;</div>
             <blockquote>
-              The points keep people coming back for the voucher. <b>My repeat business is up and I&rsquo;m not guessing anymore</b> &mdash; I can see it.
+              The points keep people coming back for the voucher. <b>My repeat business is up and I&rsquo;m not guessing anymore</b> - I can see it.
             </blockquote>
             <figcaption className="who">
               <span className="avatar" style={{ background: "var(--sky)" }}>FK</span>

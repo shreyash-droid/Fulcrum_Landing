@@ -10,7 +10,7 @@ export default function Problem() {
             You know their face. You recall their smiles. You <em>just</em> don&rsquo;t know their names.
           </h2>
           <p className="lead section-intro">
-            Regulars walk in, buy, walk out. You&rsquo;ve thought about asking for their number &mdash; but it feels awkward, almost impolite. So months pass, and you still can&rsquo;t reach them when business is slow.
+            Regulars walk in, buy, walk out. You&rsquo;ve thought about asking for their number - but it feels awkward, almost impolite. So months pass, and you still can&rsquo;t reach them when business is slow.
           </p>
         </div>
         <div className="grid-3">

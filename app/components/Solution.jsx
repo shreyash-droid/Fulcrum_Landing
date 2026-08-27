@@ -7,7 +7,7 @@ export default function Solution() {
             <span className="dot"></span> The solution
           </div>
           <h2>
-            Meet Fulcrum. <em>The bridge you&rsquo;ve been missing</em> &mdash; Now built for you.
+            Meet Fulcrum. <em>The bridge you&rsquo;ve been missing</em> - Now built for you.
           </h2>
           <p className="lead solution-intro">
             A hyper-local CRM that puts real customer relationships at the core of your business.
@@ -33,7 +33,7 @@ export default function Solution() {
                 <animate attributeName="opacity" dur="3.8s" begin="1.9s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.14;0.86;1" />
               </circle>
             </svg>
-            {/* Vertical connector — shown only on stacked (mobile) layout */}
+            {/* Vertical connector - shown only on stacked (mobile) layout */}
             <svg viewBox="0 0 24 210" width="24" height="210" className="bridge-vert" aria-hidden="true">
               <path d="M12 84 L12 176" fill="none" stroke="var(--lime)" strokeWidth="2" strokeDasharray="1 12" strokeLinecap="round" opacity=".85" />
               <circle className="mover" r="5" fill="var(--lime)">
@@ -56,7 +56,7 @@ export default function Solution() {
           </div>
         </div>
 
-        {/* ARM philosophy — the growth flywheel at the heart of Fulcrum */}
+        {/* ARM philosophy - the growth flywheel at the heart of Fulcrum */}
         <div className="arm reveal">
           <div className="arm-head">
             <span className="arm-kicker">The Fulcrum philosophy</span>
@@ -65,7 +65,7 @@ export default function Solution() {
               <span className="arm-mono">R</span>etain.{" "}
               <span className="arm-mono">M</span>arket.
             </h3>
-            <p>Three moves, one loop. Every customer you win feeds the next — a flywheel that compounds with every visit.</p>
+            <p>Three moves, one loop. Every customer you win feeds the next - a flywheel that compounds with every visit.</p>
           </div>
 
           <div className="arm-flow" role="list">
@@ -115,7 +115,7 @@ export default function Solution() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M3 12a9 9 0 1 0 3-6.7" /><path d="M3 3v4h4" />
             </svg>
-            <span>and the loop begins again — every visit compounds the last</span>
+            <span>and the loop begins again - every visit compounds the last</span>
           </div>
         </div>
       </div>
