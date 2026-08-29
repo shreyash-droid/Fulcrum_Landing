@@ -7,7 +7,9 @@ export default function Faq() {
             <span className="dot" style={{ background: "var(--lime)" }}></span> Frequently asked questions
           </div>
           <h2>
-            Good questions. <em>Clear answers.</em>
+            Good questions.
+            <br />
+            <em>Clear answers.</em>
           </h2>
           <p className="lead" style={{ marginTop: "16px" }}>
             Still curious? We&rsquo;d love to hear from you.

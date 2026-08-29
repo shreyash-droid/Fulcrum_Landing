@@ -1,6 +1,6 @@
-import DesignSwitch from "./DesignSwitch";
+import DesignSwitch from "../DesignSwitch";
 
-export default function Header() {
+export default function VisualHeader() {
   return (
     <header className="site-header" id="siteHeader">
       <div className="nav">
@@ -9,10 +9,10 @@ export default function Header() {
           Fulcrum<span className="dot">.</span>
         </a>
         <nav className="nav-links" id="navLinks" aria-label="Primary">
-          <a href="#solution">Business</a>
-          <a href="#customers">Customers</a>
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How it works</a>
+          <a href="#loop">The loop</a>
+          <a href="#compare">Before / after</a>
+          <a href="#steps">3 steps</a>
+          <a href="#toolkit">What you get</a>
           <a href="#faq">FAQ</a>
           <a href="#waitlist" className="btn btn--primary btn--md nav-menu-cta">
             Join the waitlist{" "}

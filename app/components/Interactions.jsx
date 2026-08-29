@@ -1,13 +1,22 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 /* ============================================================
    Fulcrum - landing page interactions (ported from main.js)
-   Runs once after mount and wires up DOM-based behaviour on the
-   server-rendered markup (nav, theme, FAQ, feature tabs, reveals…).
+   Wires up DOM-based behaviour on the server-rendered markup (nav, theme,
+   FAQ, feature tabs, reveals…). Every block is guarded on its own element,
+   so it no-ops on routes that don't render that block.
+
+   Re-runs on route change: the three design directions live on separate
+   routes under one shared layout, so this component never unmounts between
+   them and would otherwise leave the new page's .reveal / .count elements
+   unobserved.
    ============================================================ */
 export default function Interactions() {
+  const pathname = usePathname();
+
   useEffect(() => {
     /* ---------- Sticky nav: translucent on scroll ---------- */
     var header = document.getElementById("siteHeader");
@@ -343,7 +352,7 @@ export default function Interactions() {
       if (cio) cio.disconnect();
       if (revealTimer) clearTimeout(revealTimer);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

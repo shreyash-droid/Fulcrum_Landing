@@ -117,13 +117,15 @@ button { font-family: inherit; }
   border-radius: 4px;
 }
 
-h1, h2, h3 { margin: 0; font-feature-settings: "liga" 1, "dlig" 1; text-wrap: pretty; }
+/* balance keeps every headline to its minimum line count and splits it evenly
+   across those lines, instead of leaving a short orphan on its own line. */
+h1, h2, h3 { margin: 0; font-feature-settings: "liga" 1, "dlig" 1; text-wrap: balance; }
 
 /* ---------- Type system ---------- */
 h1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-size: clamp(2.3rem, 4.4vw, 3.75rem);
   line-height: 1.1;
   letter-spacing: -.021em;
   color: var(--forest);
@@ -336,7 +338,10 @@ em {
 .hero { padding: 64px 0 40px; overflow-x: clip; }
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+  /* 58/42 rather than an even split - the phone composition is a fixed 452px,
+     so the extra room goes to the headline column instead of sitting unused
+     as centering margin around the phones. */
+  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
   gap: 48px;
   align-items: center;
 }
@@ -351,6 +356,8 @@ em {
   color: var(--ink-muted);
 }
 .tagline .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
+/* No max-width here on purpose - the grid column is already the tighter
+   constraint, and capping it narrower would force MORE wraps, not fewer. */
 .hero h1 { margin: 0 0 24px; }
 .hero .lead { margin: 0 0 36px; max-width: 30ch; font-size: clamp(1.1rem, 1.7vw, 1.25rem); }
 .hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
@@ -474,7 +481,7 @@ em {
    ============================================================ */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .section-intro { margin: 0 0 64px; max-width: 44ch; }
-.section-head h2 { max-width: 28ch; margin-bottom: 20px; }
+.section-head h2 { max-width: 42ch; margin-bottom: 20px; }
 
 /* Shared icon tile - the sage chip used to mark each item */
 .icon-tile {
@@ -495,7 +502,7 @@ em {
 /* ============================================================
    Solution (dark) - bridge + pillars
    ============================================================ */
-.section--forest h2 { color: var(--paper); max-width: 26ch; margin-bottom: 20px; }
+.section--forest h2 { color: var(--paper); max-width: 36ch; margin-bottom: 20px; }
 .section--forest h2 em { color: var(--accent-on-dark); }
 .solution-intro { margin: 0 0 88px; max-width: 40ch; }
 
@@ -702,7 +709,7 @@ em {
 /* ============================================================
    Why Fulcrum (gradient dark)
    ============================================================ */
-.section--gradient h2 { color: var(--paper); max-width: 32ch; margin-bottom: 64px; }
+.section--gradient h2 { color: var(--paper); max-width: 46ch; margin-bottom: 64px; }
 .section--gradient h2 em { color: var(--accent-on-dark); }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
 .reason {
@@ -875,7 +882,7 @@ em {
   display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
   align-items: center; text-align: left; padding: 72px;
 }
-.cta-block--split h2 { margin: 0 0 20px; max-width: 18ch; text-align: left; }
+.cta-block--split h2 { margin: 0 0 20px; max-width: 26ch; text-align: left; }
 .cta-copy { position: relative; z-index: 1; }
 .cta-form-wrap { position: relative; z-index: 1; }
 .waitlist-lead {
@@ -1290,6 +1297,10 @@ em {
   .store-badges { justify-content: center; }
 
   .faq-grid { grid-template-columns: 1fr; gap: 36px; }
+  /* "Good questions." / "Clear answers." is a forced 2-line break (see
+     Faq.jsx) - the desktop floor is too large once this column goes full
+     width on a phone and would wrap each half a second time. */
+  .faq-grid h2 { font-size: clamp(1.5rem, 6vw, 2.2rem); }
 
   .proof-band .container { grid-template-columns: repeat(2, 1fr); }
   .proof-item { padding: 32px 28px; }
@@ -1320,7 +1331,10 @@ em {
   .cta-block { padding: 72px 24px; }
   .cta-block .sparkle { display: none; }
   .cta-block--split { grid-template-columns: 1fr; gap: 36px; padding: 56px 24px; text-align: center; }
-  .cta-block--split h2 { max-width: none; text-align: center; margin-inline: auto; }
+  /* "Ready to turn customers" / "into repeat customers?" is a forced
+     2-line break (see Waitlist.jsx) - it's the longest of these clauses,
+     so it needs the smallest floor to still fit on one line each. */
+  .cta-block--split h2 { max-width: none; text-align: center; margin-inline: auto; font-size: clamp(1.3rem, 6.5vw, 2.1rem); }
   .cta-block--split .waitlist-lead { max-width: none; margin-inline: auto; }
   .cta-block--split .cta-reassure { justify-content: center; }
   .waitlist-form { grid-template-columns: 1fr; }

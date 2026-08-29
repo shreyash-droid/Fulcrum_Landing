@@ -1,18 +1,20 @@
-import DesignSwitch from "./DesignSwitch";
+import DesignSwitch from "../DesignSwitch";
 
-export default function Header() {
+/* Design C opens on a dark hero, so the nav starts light-on-forest and the
+   scroll state (.is-scrolled) hands it back to the standard cream bar. */
+export default function StoryHeader() {
   return (
-    <header className="site-header" id="siteHeader">
+    <header className="site-header v3-header" id="siteHeader">
       <div className="nav">
         <a href="#" className="brand" aria-label="Fulcrum home">
           <img className="brand-mark" src="/assets/logo-mark.svg" alt="" width="26" height="27" />
           Fulcrum<span className="dot">.</span>
         </a>
         <nav className="nav-links" id="navLinks" aria-label="Primary">
-          <a href="#solution">Business</a>
-          <a href="#customers">Customers</a>
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How it works</a>
+          <a href="#story">The story</a>
+          <a href="#day">Your day</a>
+          <a href="#apps">The apps</a>
+          <a href="#change">What changes</a>
           <a href="#faq">FAQ</a>
           <a href="#waitlist" className="btn btn--primary btn--md nav-menu-cta">
             Join the waitlist{" "}
@@ -22,7 +24,7 @@ export default function Header() {
           </a>
         </nav>
         <div className="nav-actions">
-          <DesignSwitch />
+          <DesignSwitch tone="dark" />
           <a href="#waitlist" className="btn btn--primary btn--md">
             Join the waitlist{" "}
             <span className="arrow" aria-hidden="true">

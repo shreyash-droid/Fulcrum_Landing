@@ -1,0 +1,351 @@
+/* ============================================================
+   Design C - "Story"
+   The same Fulcrum tokens told as a comic strip: a dark opening panel,
+   six drawn beats, a clock-time rail, then before/after cards. Almost
+   nothing here is a paragraph. Scoped to .v3-root throughout.
+   ============================================================ */
+
+.v3-root { --section-y: 100px; background: var(--paper); }
+.v3-root h2 { font-size: clamp(2rem, 3.8vw, 3.2rem); }
+
+.v3-head { max-width: 24ch; margin-bottom: 56px; }
+.v3-head h2 { text-wrap: balance; }
+.v3-head--dark h2 { color: var(--paper); }
+.v3-head--dark em { color: var(--accent-on-dark); }
+
+/* ============================================================
+   Header over the dark opening panel
+   ============================================================ */
+/* Light-on-forest only while the bar is transparent AND the mobile menu is
+   shut - the open menu drops a cream sheet behind these links, and the CTA
+   keeps its own lime/forest pairing. */
+.v3-header:not(.is-scrolled) .brand,
+.v3-header:not(.is-scrolled) .nav-links:not(.is-open) > a:not(.btn),
+.v3-header:not(.is-scrolled) .nav-toggle { color: var(--paper); }
+.v3-header:not(.is-scrolled) .nav-links:not(.is-open) > a:not(.btn):hover { color: var(--accent-on-dark); }
+.v3-header:not(.is-scrolled) .nav-toggle { border-color: rgba(251, 248, 241, 0.28); }
+
+/* Once the bar turns cream the dark switch would be invisible - hand it back
+   to the light treatment. */
+.v3-header.is-scrolled .design-switch--dark { background: var(--sage); border-color: var(--divider); }
+.v3-header.is-scrolled .design-switch--dark .ds-label,
+.v3-header.is-scrolled .design-switch--dark .ds-opt { color: var(--ink-muted); }
+.v3-header.is-scrolled .design-switch--dark .ds-opt:hover { background: rgba(255, 255, 255, 0.65); color: var(--forest); }
+.v3-header.is-scrolled .design-switch--dark .ds-opt[data-active="true"],
+.v3-header.is-scrolled .design-switch--dark .ds-opt[data-active="true"]:hover { background: var(--forest); color: var(--cream); }
+
+/* ============================================================
+   Opening panel (hero)
+   ============================================================ */
+.v3-hero {
+  /* Pull up under the sticky 72px nav so the forest runs to the very top. */
+  margin-top: -72px;
+  padding: 128px 0 84px;
+  background: var(--forest);
+  border-radius: 0 0 44px 44px;
+  overflow: hidden;
+}
+.v3-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
+  gap: 52px;
+  align-items: center;
+}
+.v3-hero-copy .tagline { color: rgba(242, 236, 224, 0.7); }
+.v3-hero-copy h1 { margin: 0 0 22px; color: var(--paper); font-size: clamp(2.5rem, 4.6vw, 3.9rem); }
+.v3-hero-copy h1 em { color: var(--accent-on-dark); }
+.v3-hero-copy .lead { margin: 0 0 34px; max-width: 30ch; color: rgba(242, 236, 224, 0.78); font-size: clamp(1.1rem, 1.7vw, 1.3rem); }
+.v3-hero-cta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 34px; }
+.v3-ghost { color: var(--paper); border-color: rgba(251, 248, 241, 0.4); }
+.v3-ghost:hover { background: rgba(251, 248, 241, 0.1); color: var(--paper); }
+
+.v3-reassure {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.v3-reassure li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font: 500 14px var(--font-body);
+  color: rgba(242, 236, 224, 0.8);
+}
+.v3-reassure svg { color: var(--accent-on-dark); flex: none; }
+
+.v3-hero-art { display: flex; justify-content: center; }
+.v3-hero-art svg { width: 100%; max-width: 620px; height: auto; }
+
+.v3-hero-phone { animation: v3-bob 3.6s ease-in-out infinite; }
+.v3-hero-chip { animation: v3-lift 3.6s ease-in-out infinite; }
+@keyframes v3-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes v3-lift {
+  0%, 100% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(-12px); opacity: 1; }
+}
+
+/* shared panel motion */
+.v3-scan { animation: v3-scanline 2.6s ease-in-out infinite; }
+@keyframes v3-scanline {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(58px); opacity: 1; }
+}
+.v3-spark { animation: v3-twinkle 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.v3-spark--b { animation-duration: 3.6s; animation-delay: 0.6s; }
+.v3-spark--c { animation-duration: 4.2s; animation-delay: 1.3s; }
+@keyframes v3-twinkle {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+.v3-burst { transform-box: fill-box; transform-origin: center; animation: v3-swell 3.2s ease-in-out infinite; }
+@keyframes v3-swell {
+  0%, 100% { transform: scale(0.94); }
+  50% { transform: scale(1.04); }
+}
+
+/* ============================================================
+   The six-panel strip
+   ============================================================ */
+.v3-panels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.v3-panel { margin: 0; }
+.v3-stage {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+.v3-panel:hover .v3-stage { transform: translateY(-5px); box-shadow: var(--shadow-pop); }
+.v3-stage svg { display: block; width: 100%; height: auto; }
+.v3-panel-num {
+  position: absolute;
+  top: 14px; left: 14px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--lime);
+  font: 700 15px var(--font-body);
+}
+.v3-cap {
+  margin: 16px 4px 0;
+  font: 600 clamp(1.05rem, 1.5vw, 1.3rem) var(--font-display);
+  letter-spacing: -0.015em;
+  color: var(--forest);
+}
+
+/* ============================================================
+   The day rail
+   ============================================================ */
+.v3-rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.v3-rail::before {
+  content: "";
+  position: absolute;
+  left: 12.5%; right: 12.5%;
+  top: 54px;
+  height: 2px;
+  background-image: radial-gradient(circle, rgba(196, 229, 56, 0.5) 1.1px, transparent 1.2px);
+  background-size: 11px 2px;
+  background-repeat: repeat-x;
+}
+.v3-stop { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 12px; }
+.v3-stop-time {
+  height: 34px;
+  font: 700 clamp(1.5rem, 2.4vw, 2rem)/34px var(--font-display);
+  letter-spacing: -0.03em;
+  color: var(--paper);
+}
+.v3-stop-dot {
+  position: relative;
+  z-index: 1;
+  width: 14px; height: 14px;
+  margin: 14px 0;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 0 5px var(--forest), 0 0 14px var(--c);
+  animation: v3-throb 3.2s ease-in-out infinite;
+  animation-delay: var(--d);
+}
+@keyframes v3-throb {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+}
+.v3-stop-ico {
+  display: grid;
+  place-items: center;
+  width: 62px; height: 62px;
+  margin: 18px 0 14px;
+  border-radius: 50%;
+  color: var(--c);
+  background: rgba(251, 248, 241, 0.07);
+  border: 2px solid var(--c);
+}
+.v3-stop-lbl {
+  max-width: 16ch;
+  font: 500 15px var(--font-body);
+  color: var(--on-dark-label);
+  text-wrap: balance;
+}
+
+/* ============================================================
+   The two apps, facing each other
+   ============================================================ */
+.v3-pair { display: grid; grid-template-columns: 1fr minmax(140px, 200px) 1fr; gap: 20px; align-items: center; }
+.v3-app { display: flex; flex-direction: column; align-items: center; gap: 24px; margin: 0; text-align: center; }
+.v3-app-phone {
+  width: min(240px, 60vw);
+  padding: 9px;
+  border-radius: 30px;
+  background: var(--forest);
+  box-shadow: var(--shadow-phone);
+}
+.v3-app-phone img { display: block; width: 100%; height: auto; border-radius: 22px; }
+.v3-app-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--lime);
+  color: var(--on-accent);
+  font: 700 11px var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.v3-app-tag--alt { background: var(--coral); color: var(--cream); }
+.v3-app figcaption h3 { margin: 0 0 6px; font-size: 1.5rem; }
+.v3-app figcaption p { margin: 0 0 22px; font: 400 15px var(--font-body); color: var(--ink-muted); }
+.v3-app .store-badges { justify-content: center; }
+
+.v3-arc { display: flex; justify-content: center; }
+.v3-arc svg { width: 100%; max-width: 200px; height: auto; }
+
+/* ============================================================
+   Before / after cards + trust strip
+   ============================================================ */
+.v3-gain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 0 0 56px; padding: 0; list-style: none; }
+.v3-gain {
+  padding: 32px 30px 34px;
+  border-radius: var(--radius-block);
+  background: var(--cream);
+  border: 1px solid var(--divider);
+}
+.v3-gain-ico {
+  display: grid;
+  place-items: center;
+  width: 52px; height: 52px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+  background: var(--sage);
+  color: var(--forest);
+}
+.v3-gain-vals { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.v3-gain-before {
+  font: 600 clamp(1.3rem, 2vw, 1.7rem) var(--font-display);
+  color: var(--ink-muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  opacity: 0.7;
+}
+.v3-gain-arrow { color: var(--coral); display: inline-flex; }
+.v3-gain-after {
+  font: 700 clamp(2.2rem, 3.6vw, 3rem) var(--font-display);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--forest);
+}
+.v3-gain-lbl { margin: 14px 0 0; font: 400 15px var(--font-body); color: var(--ink-muted); }
+
+.v3-trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 0;
+  padding: 26px 30px;
+  list-style: none;
+  border-radius: var(--radius-block);
+  background: var(--sage);
+}
+.v3-trust li { display: flex; align-items: center; gap: 12px; font: 500 14px var(--font-body); color: var(--forest); }
+.v3-trust svg { flex: none; color: var(--muted-on-sage); }
+
+/* ============================================================
+   FAQ - inherits the shared accordion, just softened
+   ============================================================ */
+.v3-faq .faq-a p { max-width: 46ch; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1080px) {
+  .v3-panels { grid-template-columns: repeat(2, 1fr); }
+  .v3-pair { grid-template-columns: 1fr 130px 1fr; gap: 12px; }
+}
+
+@media (max-width: 900px) {
+  .v3-root { --section-y: 72px; }
+  .v3-hero { padding: 112px 0 64px; border-radius: 0 0 32px 32px; }
+  .v3-hero-grid { grid-template-columns: 1fr; gap: 16px; }
+  .v3-hero-art { order: -1; }
+  .v3-head { margin-bottom: 40px; max-width: none; }
+
+  /* the day rail turns into a vertical timeline */
+  .v3-rail { grid-template-columns: 1fr; gap: 0; }
+  .v3-rail::before { left: 27px; right: auto; top: 8px; bottom: 8px; width: 2px; height: auto; background-size: 2px 11px; background-repeat: repeat-y; }
+  .v3-stop {
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 0;
+    text-align: left;
+  }
+  .v3-stop-time { order: 3; height: auto; line-height: 1.2; font-size: 1.35rem; color: var(--on-dark-label); }
+  .v3-stop-dot { order: 1; margin: 0 0 0 21px; }
+  .v3-stop-ico { order: 2; width: 52px; height: 52px; margin: 0; flex: none; }
+  .v3-stop-lbl { order: 4; flex: 1; max-width: none; }
+
+  .v3-pair { grid-template-columns: 1fr; gap: 44px; }
+  /* Stacked, the arc already runs top-to-bottom - it only needs to shrink. */
+  .v3-arc { order: 2; }
+  .v3-arc svg { max-width: 130px; }
+  .v3-gain-grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  .v3-trust { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .v3-panels { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+  .v3-trust { grid-template-columns: 1fr; }
+  .v3-hero-cta .btn { flex: 1 1 auto; }
+  .v3-hero { margin-top: -72px; padding-top: 104px; }
+}
+
+/* ============================================================
+   Motion preference
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .v3-hero-phone, .v3-hero-chip, .v3-scan, .v3-spark, .v3-burst, .v3-stop-dot { animation: none !important; }
+  .v3-spark { opacity: 0.9; }
+  .v3-arc circle { display: none; }
+}

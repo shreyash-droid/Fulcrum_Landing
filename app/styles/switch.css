@@ -1,0 +1,59 @@
+/* ============================================================
+   Design direction switch - REVIEW SCAFFOLD (see DesignSwitch.jsx)
+   Loaded globally so the control looks identical in all three headers.
+   ============================================================ */
+
+.design-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  flex: none;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--sage);
+  border: 1px solid var(--divider);
+}
+
+.ds-label {
+  padding: 0 8px 0 10px;
+  font: 700 10px var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.ds-opt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 13px;
+  border-radius: var(--radius-pill);
+  font: 600 12px var(--font-body);
+  line-height: 1;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  transition: background 0.15s ease-out, color 0.15s ease-out;
+}
+.ds-opt:hover { background: rgba(255, 255, 255, 0.65); color: var(--forest); }
+.ds-opt[data-active="true"],
+.ds-opt[data-active="true"]:hover { background: var(--forest); color: var(--cream); }
+
+.ds-short { display: none; }
+
+/* Dark-surface header (design C sits on forest) */
+.design-switch--dark {
+  background: rgba(251, 248, 241, 0.1);
+  border-color: rgba(251, 248, 241, 0.22);
+}
+.design-switch--dark .ds-label { color: rgba(242, 236, 224, 0.62); }
+.design-switch--dark .ds-opt { color: rgba(242, 236, 224, 0.74); }
+.design-switch--dark .ds-opt:hover { background: rgba(251, 248, 241, 0.14); color: var(--cream); }
+.design-switch--dark .ds-opt[data-active="true"],
+.design-switch--dark .ds-opt[data-active="true"]:hover { background: var(--lime); color: var(--on-accent); }
+
+/* Nav gets crowded before the mobile menu kicks in - drop to A / B / C. */
+@media (max-width: 1180px) {
+  .ds-label, .ds-full { display: none; }
+  .ds-short { display: inline; }
+  .ds-opt { min-width: 30px; padding: 6px 9px; }
+}

@@ -7,7 +7,7 @@ export default function ForCustomers() {
           <div className="eyebrow">
             <span className="dot"></span> For your customers
           </div>
-          <h2 style={{ maxWidth: "16ch", marginBottom: "20px" }}>
+          <h2 style={{ maxWidth: "19ch", marginBottom: "20px" }}>
             Shopping local <em>just got rewarding.</em>
           </h2>
           <p className="lead" style={{ marginBottom: "72px", maxWidth: "48ch" }}>

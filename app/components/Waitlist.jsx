@@ -30,7 +30,9 @@ export default function Waitlist() {
           {/* Left: heading + reassurance */}
           <div className="cta-copy">
             <h2>
-              Ready to turn customers <em>into repeat customers?</em>
+              Ready to turn customers
+              <br />
+              <em>into repeat customers?</em>
             </h2>
             <p className="waitlist-lead">
               We&rsquo;re onboarding stores in batches. Join the waitlist and we&rsquo;ll reach out when your spot opens up.

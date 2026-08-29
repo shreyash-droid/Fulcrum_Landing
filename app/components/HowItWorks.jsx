@@ -6,7 +6,7 @@ export default function HowItWorks() {
           <div className="eyebrow">
             <span className="dot"></span> How it works
           </div>
-          <h2 style={{ maxWidth: "16ch", marginBottom: "72px" }}>
+          <h2 style={{ maxWidth: "21ch", marginBottom: "72px" }}>
             From setup to first sale - <em>in a week.</em>
           </h2>
         </div>
