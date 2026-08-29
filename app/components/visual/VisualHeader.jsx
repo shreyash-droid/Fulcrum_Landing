@@ -9,10 +9,10 @@ export default function VisualHeader() {
           Fulcrum<span className="dot">.</span>
         </a>
         <nav className="nav-links" id="navLinks" aria-label="Primary">
-          <a href="#loop">The loop</a>
-          <a href="#compare">Before / after</a>
-          <a href="#steps">3 steps</a>
-          <a href="#toolkit">What you get</a>
+          <a href="#loop">How it works</a>
+          <a href="#compare">Comparison</a>
+          <a href="#steps">Get started</a>
+          <a href="#toolkit">Features</a>
           <a href="#faq">FAQ</a>
           <a href="#waitlist" className="btn btn--primary btn--md nav-menu-cta">
             Join the waitlist{" "}
