@@ -1,7 +1,6 @@
 export default function ForCustomers() {
   return (
     <section className="section section--paper customers" id="customers">
-      <div className="pin-field" aria-hidden="true" id="pinField"></div>
       <div className="container">
         <div className="reveal">
           <div className="eyebrow">

@@ -80,26 +80,6 @@ export default function Interactions() {
       applyTheme(currentTheme());
     }
 
-    /* ---------- Scattered map pins (For customers bg) ---------- */
-    var pinField = document.getElementById("pinField");
-    if (pinField) {
-      var pins = [
-        [8, 6, 26], [22, 88, 20], [40, 14, 22], [62, 4, 18], [12, 46, 16],
-        [78, 92, 24], [55, 70, 16], [86, 30, 20], [30, 62, 14], [70, 50, 16],
-        [46, 94, 18], [90, 62, 16], [6, 72, 14], [50, 34, 14],
-      ];
-      var pinSvg =
-        '<path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/>';
-      pinField.innerHTML = pins
-        .map(function (p) {
-          return (
-            '<svg style="top:' + p[0] + "%;left:" + p[1] + '%" width="' + p[2] + '" height="' + p[2] +
-            '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">' + pinSvg + "</svg>"
-          );
-        })
-        .join("");
-    }
-
     /* ---------- FAQ accordion ---------- */
     var faqList = document.getElementById("faqList");
     var onFaqClick;

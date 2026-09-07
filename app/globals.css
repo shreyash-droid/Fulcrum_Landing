@@ -734,8 +734,6 @@ em {
    For customers
    ============================================================ */
 .customers { position: relative; overflow: hidden; }
-.pin-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.pin-field svg { position: absolute; color: var(--divider); opacity: .5; }
 .customers .container { position: relative; z-index: 1; }
 
 .cust-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 88px; }
