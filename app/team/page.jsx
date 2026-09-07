@@ -16,20 +16,20 @@ export const metadata = {
    into public/team/ and they appear automatically. */
 const FOUNDERS = [
   {
-    src: "/team/founder.jpg",
-    name: "Founder Name",
+    src: "/team/ravi.jpg",
+    name: "Ravi Kumar",
     initials: "F",
     role: "Founder & CEO",
     tone: "lime",
-    bio: "Add a short founder bio here - the origin of Fulcrum, the problem you set out to solve for local retail, and what you have built before.",
+    bio: "30 year career across accounts, finance, sales, marketing, PR, media relations, franchise development, personal finance advisory with first-hand experience running small retail formats - former owner of cyber café, library, automobile service & QSR. Passionate about making small / micro neighbourhood business owners get visibility and sustainability, via Fulcrum Retail Solutions.",
   },
   {
-    src: "/team/cofounder.jpg",
-    name: "Co-founder Name",
+    src: "/team/deepak.jpg",
+    name: "Deepak",
     initials: "CF",
     role: "Co-founder & CTO",
     tone: "coral",
-    bio: "Add a short co-founder bio here - the product and engineering craft behind Fulcrum and the experience your customers are trusting.",
+    bio: "The quiet but persistent filter behind Fulcrum Retail. Ensures we talk less about ourselves and more about our network store owner’s discoverability, revenue generation and sustainability. Believes in asking 2 questions: “Will our solution help our partner store?” and “Will this add value to a customer’s spend?” Spirited customer advocate - can put himself in their shoes faster than you can say, “get, set, go”! Car enthusiast, bike lover and travel enthusiast.",
   },
 ];
 
@@ -62,7 +62,7 @@ const ADVISORS = [
     initials: "RV",
     role: "Strategy Advisor · BFSI veteran & angel investor",
     tone: "coral",
-    bio: "A 41-year career spanning lending, risk management, financial control and fund-raising across banking and financial services. Industry-agnostic from decades across NBFCs, SME and corporate finance - and a founder of two companies, angel investor and independent director in his own right.",
+    bio: "41 years operating experience across Central Government, Private Banks, NBFC lending, Strategy Consulting, Business Advisory and Mentoring. He Has founded 4 companies, Is an Angel Investor, part of leadership in AIF-2 fund and also serves as Independent Director.",
     guides: "Guides pricing models, unit economics and go-to-market strategy.",
     chips: ["BFSI", "Risk", "NBFC", "Fund-raising", "Board advisory"],
   },

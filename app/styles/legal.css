@@ -3,34 +3,6 @@
    Shares the warm-editorial design system from globals.css.
    ============================================================ */
 
-/* Waitlist consent line (lives on the home page, styled here alongside
-   the other links into the legal pages). */
-.wl-consent {
-  grid-column: 1 / -1;
-  margin: 12px 0 0;
-  font: 400 12.5px/1.55 var(--font-body);
-  color: var(--on-accent);
-  opacity: .72;
-  text-align: center;
-}
-.wl-consent a {
-  color: var(--on-accent);
-  text-decoration: underline;
-  text-decoration-color: rgba(27, 58, 46, .4);
-  text-underline-offset: 3px;
-  font-weight: 500;
-}
-.wl-consent a:hover { text-decoration-color: currentColor; }
-
-/* Waitlist submit error */
-.wl-error {
-  grid-column: 1 / -1;
-  margin: 10px 0 0;
-  font: 500 13px/1.5 var(--font-body);
-  color: #b3261e;
-  text-align: center;
-}
-
 /* ---------- Page shell ---------- */
 .legal-page { background: var(--paper); }
 

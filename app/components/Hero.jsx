@@ -29,7 +29,7 @@ export default function Hero() {
               <span className="sep" aria-hidden="true"></span>
               <span>No forced hardware</span>
               <span className="sep" aria-hidden="true"></span>
-              <span>Live in 15&nbsp;minutes</span>
+              <span>Go Live in 15&nbsp;minutes</span>
             </div>
           </div>
 

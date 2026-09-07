@@ -917,6 +917,31 @@ em {
 }
 .wl-actions { grid-column: 1 / -1; margin-top: 6px; display: flex; justify-content: center; }
 .wl-actions .btn { width: 100%; justify-content: center; }
+
+/* Waitlist consent line + submit error */
+.wl-consent {
+  grid-column: 1 / -1;
+  margin: 12px 0 0;
+  font: 400 12.5px/1.55 var(--font-body);
+  color: var(--on-accent);
+  opacity: .72;
+  text-align: center;
+}
+.wl-consent a {
+  color: var(--on-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(27, 58, 46, .4);
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+.wl-consent a:hover { text-decoration-color: currentColor; }
+.wl-error {
+  grid-column: 1 / -1;
+  margin: 10px 0 0;
+  font: 500 13px/1.5 var(--font-body);
+  color: #b3261e;
+  text-align: center;
+}
 .waitlist-notice {
   display: flex; align-items: center; gap: 10px;
   margin: 0 0 16px; padding: 12px 16px;
