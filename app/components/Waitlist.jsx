@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const EMPTY = { name: "", shop: "", address: "", email: "" };
 
@@ -15,16 +15,21 @@ const FORM_ENDPOINT =
 
 export default function Waitlist() {
   const [values, setValues] = useState(EMPTY);
-  const [submitted, setSubmitted] = useState(false);
+  const [notice, setNotice] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const noticeTimer = useRef(null);
 
-  const update = (field) => (e) => setValues((v) => ({ ...v, [field]: e.target.value }));
+  const update = (field) => (e) => {
+    if (notice) setNotice("");
+    setValues((v) => ({ ...v, [field]: e.target.value }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (sending) return;
     setError("");
+    setNotice("");
     setSending(true);
     try {
       const res = await fetch(FORM_ENDPOINT, {
@@ -45,7 +50,12 @@ export default function Waitlist() {
       if (!res.ok || String(data.success) !== "true") {
         throw new Error(data.message || "Something went wrong. Please try again.");
       }
-      setSubmitted(true);
+      // Clear the form so the next person can sign up right away, and show a
+      // success message that fades out on its own.
+      setValues(EMPTY);
+      setNotice("Details sent successfully! You can add another entry.");
+      if (noticeTimer.current) clearTimeout(noticeTimer.current);
+      noticeTimer.current = setTimeout(() => setNotice(""), 6000);
     } catch (err) {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
@@ -87,14 +97,13 @@ export default function Waitlist() {
 
           {/* Right: form */}
           <div className="cta-form-wrap">
-            {submitted ? (
-              <div className="waitlist-success" role="status">
+            {notice ? (
+              <div className="waitlist-notice" role="status">
                 <span className="tick" aria-hidden="true">✓</span>
-                <h3>You&rsquo;re on the list, {values.name.split(" ")[0] || "friend"}!</h3>
-                <p>Thanks for joining. We&rsquo;ll be in touch soon about getting {values.shop || "your store"} set up.</p>
+                <span>{notice}</span>
               </div>
-            ) : (
-              <form className="waitlist-form" onSubmit={handleSubmit} noValidate>
+            ) : null}
+            <form className="waitlist-form" onSubmit={handleSubmit} noValidate>
                 <div className="wl-field">
                   <label htmlFor="wl-name">Your name</label>
                   <input id="wl-name" name="name" type="text" autoComplete="name" placeholder="Mabel D'Souza" required value={values.name} onChange={update("name")} />
@@ -129,8 +138,7 @@ export default function Waitlist() {
                   <a href="/terms">Terms &amp; Conditions</a> and{" "}
                   <a href="/privacy">Privacy Policy</a>.
                 </p>
-              </form>
-            )}
+            </form>
           </div>
         </div>
       </div>
