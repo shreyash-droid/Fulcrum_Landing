@@ -4,16 +4,53 @@ import { useState } from "react";
 
 const EMPTY = { name: "", shop: "", address: "", email: "" };
 
+// FormSubmit.co — no account, no API key. The destination email IS the endpoint.
+// Submissions are delivered to this inbox after a one-time "Activate" click the
+// inbox owner makes on the first email FormSubmit sends. Once you have that
+// activation email you can swap this for the aliased endpoint FormSubmit gives
+// you (https://formsubmit.co/ajax/<random-string>) to keep the address private.
+const FORM_ENDPOINT =
+  process.env.NEXT_PUBLIC_FORMSUBMIT_ENDPOINT ||
+  "https://formsubmit.co/ajax/fulcrumretailsolutions@gmail.com";
+
 export default function Waitlist() {
   const [values, setValues] = useState(EMPTY);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const update = (field) => (e) => setValues((v) => ({ ...v, [field]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: wire up to a real endpoint / CRM before launch.
-    setSubmitted(true);
+    if (sending) return;
+    setError("");
+    setSending(true);
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: values.name,
+          shop: values.shop,
+          address: values.address,
+          email: values.email,
+          _subject: `New waitlist signup: ${values.shop || "Unknown shop"}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      // FormSubmit returns { success: "true" } (string) on success.
+      if (!res.ok || String(data.success) !== "true") {
+        throw new Error(data.message || "Something went wrong. Please try again.");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -75,13 +112,18 @@ export default function Waitlist() {
                   <input id="wl-email" name="email" type="email" autoComplete="email" placeholder="you@example.com" required value={values.email} onChange={update("email")} />
                 </div>
                 <div className="wl-actions">
-                  <button type="submit" className="btn btn--dark btn--lg">
-                    Join the waitlist{" "}
+                  <button type="submit" className="btn btn--dark btn--lg" disabled={sending}>
+                    {sending ? "Sending…" : "Join the waitlist"}{" "}
                     <span className="arrow" aria-hidden="true">
                       ↗
                     </span>
                   </button>
                 </div>
+                {error ? (
+                  <p className="wl-error" role="alert">
+                    {error}
+                  </p>
+                ) : null}
                 <p className="wl-consent">
                   By joining, you agree to our{" "}
                   <a href="/terms">Terms &amp; Conditions</a> and{" "}

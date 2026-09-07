@@ -22,6 +22,15 @@
 }
 .wl-consent a:hover { text-decoration-color: currentColor; }
 
+/* Waitlist submit error */
+.wl-error {
+  grid-column: 1 / -1;
+  margin: 10px 0 0;
+  font: 500 13px/1.5 var(--font-body);
+  color: #b3261e;
+  text-align: center;
+}
+
 /* ---------- Page shell ---------- */
 .legal-page { background: var(--paper); }
 
