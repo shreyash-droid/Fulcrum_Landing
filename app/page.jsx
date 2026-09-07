@@ -6,7 +6,6 @@ import Solution from "./components/Solution";
 import HowItWorks from "./components/HowItWorks";
 import Features from "./components/Features";
 import WhyFulcrum from "./components/WhyFulcrum";
-import Testimonials from "./components/Testimonials";
 import ForCustomers from "./components/ForCustomers";
 import Faq from "./components/Faq";
 import Waitlist from "./components/Waitlist";
@@ -29,7 +28,6 @@ export default function Home() {
         <HowItWorks />
         <Features />
         <WhyFulcrum />
-        <Testimonials />
         <ForCustomers />
         <Faq />
         <Waitlist />

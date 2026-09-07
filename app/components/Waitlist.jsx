@@ -82,6 +82,11 @@ export default function Waitlist() {
                     </span>
                   </button>
                 </div>
+                <p className="wl-consent">
+                  By joining, you agree to our{" "}
+                  <a href="/terms">Terms &amp; Conditions</a> and{" "}
+                  <a href="/privacy">Privacy Policy</a>.
+                </p>
               </form>
             )}
           </div>

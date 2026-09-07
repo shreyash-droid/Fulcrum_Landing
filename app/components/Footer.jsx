@@ -14,27 +14,28 @@ export default function Footer() {
           <div className="footer-col">
             <div className="title">Product</div>
             <div className="links">
-              <a href="#">Business App</a>
-              <a href="#">Customer App</a>
-              <a href="#features">Features</a>
-              <a href="#waitlist">Join the waitlist</a>
+              <a href="/#solution">Business App</a>
+              <a href="/#customers">Customer App</a>
+              <a href="/#features">Features</a>
+              <a href="/#waitlist">Join the waitlist</a>
             </div>
           </div>
           <div className="footer-col">
             <div className="title">Company</div>
             <div className="links">
-              <a href="#why">About</a>
-              <a href="#faq">FAQ</a>
-              <a href="#">Contact</a>
-              <a href="#">Blog</a>
+              <a href="/#why">About</a>
+              <a href="/team">Team</a>
+              <a href="/#faq">FAQ</a>
+              <a href="/#waitlist">Contact</a>
+              <a href="/story">Blog</a>
             </div>
           </div>
           <div className="footer-col">
             <div className="title">Legal</div>
             <div className="links">
-              <a href="#">Privacy</a>
-              <a href="#">Terms</a>
-              <a href="#">Data Policy</a>
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms &amp; Conditions</a>
+              <a href="/privacy#your-rights">Data Policy</a>
             </div>
           </div>
         </div>

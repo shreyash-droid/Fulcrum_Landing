@@ -35,13 +35,13 @@ export default function Solution() {
             </svg>
             {/* Vertical connector - shown only on stacked (mobile) layout */}
             <svg viewBox="0 0 24 210" width="24" height="210" className="bridge-vert" aria-hidden="true">
-              <path d="M12 84 L12 176" fill="none" stroke="var(--lime)" strokeWidth="2" strokeDasharray="1 12" strokeLinecap="round" opacity=".85" />
+              <path d="M12 6 L12 204" fill="none" stroke="var(--lime)" strokeWidth="2" strokeDasharray="1 12" strokeLinecap="round" opacity=".85" />
               <circle className="mover" r="5" fill="var(--lime)">
-                <animateMotion dur="3.8s" repeatCount="indefinite" path="M12 84 L12 176" />
+                <animateMotion dur="3.8s" repeatCount="indefinite" path="M12 6 L12 204" />
                 <animate attributeName="opacity" dur="3.8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.14;0.86;1" />
               </circle>
               <circle className="mover" r="5" fill="var(--coral)">
-                <animateMotion dur="3.8s" begin="1.9s" repeatCount="indefinite" path="M12 84 L12 176" />
+                <animateMotion dur="3.8s" begin="1.9s" repeatCount="indefinite" path="M12 6 L12 204" />
                 <animate attributeName="opacity" dur="3.8s" begin="1.9s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.14;0.86;1" />
               </circle>
             </svg>

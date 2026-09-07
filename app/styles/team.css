@@ -1,0 +1,202 @@
+/* ============================================================
+   Fulcrum - Team & Advisors page
+   Reuses the global design system (tokens, .section, .eyebrow,
+   .reveal). Everything here is theme-aware via CSS variables, so it
+   follows the warm and blue palettes automatically.
+   ============================================================ */
+
+/* ---------- Tone helper ----------
+   Each person carries a tone (lime / coral / sky / forest) that drives
+   their avatar ring and role colour, so the page reads as one system. */
+.ta--lime   { --tone: var(--lime);   --tone-ink: var(--forest); }
+.ta--coral  { --tone: var(--coral);  --tone-ink: #fff; }
+.ta--sky    { --tone: var(--sky);    --tone-ink: var(--forest); }
+.ta--forest { --tone: var(--forest); --tone-ink: var(--cream); }
+.role--lime   { color: var(--forest); }
+.role--coral  { color: var(--coral); }
+.role--sky    { color: var(--sky); }
+.role--forest { color: var(--ink-muted); }
+
+/* ---------- Avatar ---------- */
+.ta {
+  --size: 76px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  flex: none;
+  display: grid;
+  place-items: center;
+  background: var(--sage);
+  box-shadow: 0 6px 18px rgba(27, 58, 46, .16);
+}
+.ta-img {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.ta-mono {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  font-size: calc(var(--size) * .4);
+  line-height: 1;
+  color: var(--tone-ink, var(--forest));
+  background:
+    radial-gradient(120% 120% at 30% 20%, color-mix(in srgb, var(--tone) 70%, #fff) 0%, var(--tone) 60%);
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  user-select: none;
+}
+/* Thin themed ring that lifts the portrait off the surface */
+.ta-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid var(--tone, var(--lime));
+  opacity: .5;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.team-hero { padding-bottom: 84px; }
+.team-hero h1 { max-width: 18ch; color: var(--paper); }
+.team-hero h1 em { color: var(--accent-on-dark); }
+.team-hero-lead { margin-top: 22px; max-width: 60ch; }
+
+/* ============================================================
+   Founding team
+   ============================================================ */
+.founder-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.founder-card {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  background: var(--cream);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-block);
+  padding: 34px;
+  box-shadow: var(--shadow-card);
+  transition: transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s cubic-bezier(.16, 1, .3, 1);
+}
+.founder-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-pop);
+}
+.founder-card .ta { --size: 116px; }
+.founder-body { min-width: 0; }
+
+.person-name {
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  line-height: 1.15;
+  color: var(--forest);
+}
+.person-role {
+  margin-top: 6px;
+  font: 700 12.5px/1.4 var(--font-body);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.person-bio {
+  margin: 16px 0 0;
+  font: 400 15.5px/1.65 var(--font-body);
+  color: var(--ink-muted);
+}
+
+/* ============================================================
+   Advisors (dark, premium)
+   ============================================================ */
+.team-advisors h2 { max-width: 24ch; }
+.team-advisors h2 em { color: var(--accent-on-dark); }
+.team-advisors .section-intro { color: rgba(242, 236, 224, .72); max-width: 60ch; }
+
+.advisor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.advisor-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  border-radius: var(--radius-block);
+  padding: 32px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .22);
+  transition: transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s cubic-bezier(.16, 1, .3, 1);
+}
+.advisor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, .3);
+}
+.advisor-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.advisor-id { min-width: 0; }
+.advisor-card .person-role { color: var(--ink-muted); font-size: 11.5px; letter-spacing: .06em; }
+.advisor-card .person-name { font-size: clamp(1.2rem, 1.7vw, 1.4rem); }
+.advisor-card .person-bio { margin-top: 0; }
+
+.advisor-guides {
+  margin: 16px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+  font: 500 14.5px/1.55 var(--font-body);
+  color: var(--forest);
+}
+
+/* Credential chips */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.chip {
+  font: 600 11.5px/1 var(--font-body);
+  letter-spacing: .02em;
+  color: var(--forest);
+  background: var(--sage);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-pill);
+  padding: 7px 12px;
+  white-space: nowrap;
+}
+
+/* Staggered reveal so the cards cascade in */
+.founder-card:nth-child(2),
+.advisor-card:nth-child(2) { transition-delay: .08s; }
+.advisor-card:nth-child(3) { transition-delay: .16s; }
+.advisor-card:nth-child(4) { transition-delay: .24s; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .founder-grid { grid-template-columns: 1fr; }
+  .advisor-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .founder-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 22px;
+    gap: 20px;
+  }
+  .founder-card .ta { --size: 104px; }
+  .advisor-card { padding: 26px 22px; }
+  .advisor-head { flex-direction: column; text-align: center; gap: 14px; }
+}

@@ -1,20 +1,19 @@
-import DesignSwitch from "./DesignSwitch";
-
 export default function Header() {
   return (
     <header className="site-header" id="siteHeader">
       <div className="nav">
-        <a href="#" className="brand" aria-label="Fulcrum home">
+        <a href="/" className="brand" aria-label="Fulcrum home">
           <img className="brand-mark" src="/assets/logo-mark.svg" alt="" width="26" height="27" />
           Fulcrum<span className="dot">.</span>
         </a>
         <nav className="nav-links" id="navLinks" aria-label="Primary">
-          <a href="#solution">Business</a>
-          <a href="#customers">Customers</a>
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How it works</a>
-          <a href="#faq">FAQ</a>
-          <a href="#waitlist" className="btn btn--primary btn--md nav-menu-cta">
+          <a href="/#solution">Business</a>
+          <a href="/#customers">Customers</a>
+          <a href="/#features">Features</a>
+          <a href="/#how-it-works">How it works</a>
+          <a href="/team">Team</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/#waitlist" className="btn btn--primary btn--md nav-menu-cta">
             Join the waitlist{" "}
             <span className="arrow" aria-hidden="true">
               ↗
@@ -22,8 +21,7 @@ export default function Header() {
           </a>
         </nav>
         <div className="nav-actions">
-          <DesignSwitch />
-          <a href="#waitlist" className="btn btn--primary btn--md">
+          <a href="/#waitlist" className="btn btn--primary btn--md">
             Join the waitlist{" "}
             <span className="arrow" aria-hidden="true">
               ↗

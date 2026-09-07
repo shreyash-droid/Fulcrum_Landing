@@ -339,8 +339,32 @@ export default function Interactions() {
       }
     }
 
+    /* ---------- Honor #hash after content is painted ----------
+       The feature panel and other blocks above are injected by this effect,
+       which shifts anchor positions. So when we land on a route that carries a
+       hash (e.g. arriving at /#faq from another page), the browser's own
+       initial scroll is stale. Re-resolve it here, once after layout and again
+       shortly after in case images/fonts nudge the layout further. */
+    var hashTimer;
+    function scrollToHash() {
+      var hash = window.location.hash;
+      if (!hash || hash.length < 2) return;
+      var target;
+      try {
+        target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      } catch (e) {
+        target = document.getElementById(hash.slice(1));
+      }
+      if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
+    }
+    if (window.location.hash) {
+      requestAnimationFrame(scrollToHash);
+      hashTimer = setTimeout(scrollToHash, 350);
+    }
+
     /* ---------- Cleanup ---------- */
     return function cleanup() {
+      if (hashTimer) clearTimeout(hashTimer);
       window.removeEventListener("scroll", onScroll);
       if (toggle && onToggleClick) toggle.removeEventListener("click", onToggleClick);
       if (links && onLinksClick) links.removeEventListener("click", onLinksClick);
