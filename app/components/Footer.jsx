@@ -8,7 +8,7 @@ export default function Footer() {
               <img className="footer-mark" src="/assets/logo-mark.svg" alt="" width="30" height="31" />
               Fulcrum<span className="dot">.</span>
             </div>
-            <p>The Mini CRM for retail businesses and service providers. </p>
+            <p>The mini CRM for retail businesses and service providers. </p>
             <div className="made">Proudly made in India, by Indians, and for Indians.</div>
           </div>
           <div className="footer-col">

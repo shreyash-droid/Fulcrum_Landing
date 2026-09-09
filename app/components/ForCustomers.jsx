@@ -36,7 +36,7 @@ export default function ForCustomers() {
               <span className="cust-step-num">02</span>
             </div>
             <div className="title">Earn</div>
-            <div className="body">Points on every purchase.</div>
+            <div className="body">Cash Credits / Points on every purchase.</div>
           </article>
           <article className="cust-step reveal" style={{ transitionDelay: ".12s" }}>
             <div className="cust-step-head">
