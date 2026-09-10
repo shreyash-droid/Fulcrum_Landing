@@ -11,6 +11,7 @@ export default function Header() {
           <a href="/#customers">Customers</a>
           <a href="/#features">Features</a>
           <a href="/#how-it-works">How it works</a>
+          <a href="/pricing">Pricing</a>
           <a href="/team">Team</a>
           <a href="/#faq">FAQ</a>
           <a href="/#waitlist" className="btn btn--primary btn--md nav-menu-cta">

@@ -1020,35 +1020,6 @@ em {
 }
 
 /* ============================================================
-   Testimonials - voices from the counter
-   ============================================================ */
-.tmony-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.tmony {
-  display: flex; flex-direction: column;
-  background: var(--cream); border: 1px solid var(--divider);
-  border-radius: var(--radius-card); padding: 32px 30px;
-  transition: transform .18s ease-out, box-shadow .18s ease-out, border-color .18s ease-out;
-}
-.tmony:hover { transform: translateY(-4px); box-shadow: var(--shadow-pop); border-color: transparent; }
-.tmony .mark {
-  font: 400 56px/.6 var(--font-accent); color: var(--lime);
-  height: 30px; margin-bottom: 4px;
-}
-.tmony blockquote {
-  margin: 0 0 24px; flex: 1;
-  font: 400 17px/1.55 var(--font-body); color: var(--forest); letter-spacing: -.005em;
-}
-.tmony blockquote b { font-weight: 600; }
-.tmony .who { display: flex; align-items: center; gap: 12px; }
-.tmony .avatar {
-  width: 42px; height: 42px; flex: none; border-radius: 50%;
-  display: inline-flex; align-items: center; justify-content: center;
-  font: 700 15px var(--font-display); color: var(--on-accent);
-}
-.tmony .who .name { font: 600 14px var(--font-body); color: var(--forest); }
-.tmony .who .role { font: 400 13px var(--font-body); color: var(--ink-muted); margin-top: 1px; }
-
-/* ============================================================
    Pricing teaser - free to start
    ============================================================ */
 .pricing-head { text-align: center; margin-bottom: 56px; }
@@ -1337,7 +1308,6 @@ em {
   .proof-item:nth-child(odd) { border-left: none; padding-left: 0; }
   .proof-item:nth-child(3), .proof-item:nth-child(4) { border-top: 1px solid var(--divider); }
 
-  .tmony-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
   .plans { grid-template-columns: minmax(0, 460px); justify-content: center; }
   .plan-includes { max-width: 460px; }
   .plan-includes ul { grid-template-columns: 1fr; }
