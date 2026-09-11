@@ -117,7 +117,7 @@ export default function ForCustomers() {
               <h3>Your storefront, in one app.</h3>
               <p>Know who walked in, reward every visit, and send the weekly offer that brings quiet regulars back - right from your phone, in minutes a day.</p>
               <div style={{ marginBottom: "24px" }}>
-                <a href="#" className="btn btn--primary btn--lg">
+                <a href="#waitlist" className="btn btn--primary btn--lg">
                   Download the business app{" "}
                   <span className="arrow" aria-hidden="true">
                     ↗
@@ -125,14 +125,14 @@ export default function ForCustomers() {
                 </a>
               </div>
               <div className="store-badges">
-                <a href="#" className="store-badge" aria-label="Download the business app on the App Store">
+                <a href="#waitlist" className="store-badge" aria-label="Download the business app on the App Store">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M16.4 12.9c0-2 1.6-2.9 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.5 2 1 0 1.3-.6 2.5-.6s1.5.6 2.5.6 1.7-1 2.4-2c.7-1.1 1-2.1 1-2.2-.1 0-2.3-.9-2.3-3.4z" />
                     <path d="M14.6 6.7c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.5-.8 2.5.9 0 1.8-.5 2.4-1.1z" />
                   </svg>
                   <span className="txt"><span className="small">Download on the</span><span className="big">App Store</span></span>
                 </a>
-                <a href="#" className="store-badge" aria-label="Get the business app on Google Play">
+                <a href="#waitlist" className="store-badge" aria-label="Get the business app on Google Play">
                   <svg width="20" height="22" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l10-10.7-10-8.7z" fill="#7FA9C8" />
                     <path d="M17.2 15.4l-3.6-3.4 3.7-3.4 3.1 1.8c1.1.6 1.1 1.6 0 2.3l-3.2 1.7z" fill="#C4E538" />
@@ -169,7 +169,7 @@ export default function ForCustomers() {
               <h3>Give your regulars a reason to come back.</h3>
               <p>One app, every neighbourhood store. Points that turn into real vouchers, coupons and deals.</p>
               <div style={{ marginBottom: "24px" }}>
-                <a href="#" className="btn btn--primary btn--lg">
+                <a href="#waitlist" className="btn btn--primary btn--lg">
                   Download the customer app{" "}
                   <span className="arrow" aria-hidden="true">
                     ↗
@@ -177,14 +177,14 @@ export default function ForCustomers() {
                 </a>
               </div>
               <div className="store-badges">
-                <a href="#" className="store-badge" aria-label="Download the customer app on the App Store">
+                <a href="#waitlist" className="store-badge" aria-label="Download the customer app on the App Store">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M16.4 12.9c0-2 1.6-2.9 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.5 2 1 0 1.3-.6 2.5-.6s1.5.6 2.5.6 1.7-1 2.4-2c.7-1.1 1-2.1 1-2.2-.1 0-2.3-.9-2.3-3.4z" />
                     <path d="M14.6 6.7c.5-.7.9-1.6.8-2.6-.8 0-1.8.5-2.4 1.2-.5.6-1 1.5-.8 2.5.9 0 1.8-.5 2.4-1.1z" />
                   </svg>
                   <span className="txt"><span className="small">Download on the</span><span className="big">App Store</span></span>
                 </a>
-                <a href="#" className="store-badge" aria-label="Get the customer app on Google Play">
+                <a href="#waitlist" className="store-badge" aria-label="Get the customer app on Google Play">
                   <svg width="20" height="22" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M3.6 2.3c-.3.3-.5.7-.5 1.3v16.8c0 .6.2 1 .5 1.3l10-10.7-10-8.7z" fill="#7FA9C8" />
                     <path d="M17.2 15.4l-3.6-3.4 3.7-3.4 3.1 1.8c1.1.6 1.1 1.6 0 2.3l-3.2 1.7z" fill="#C4E538" />
