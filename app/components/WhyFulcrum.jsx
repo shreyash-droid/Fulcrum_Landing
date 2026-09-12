@@ -21,33 +21,28 @@ const ICONS = {
   ),
 };
 
-// Same four stakeholder reasons as v1 - all copy preserved. The security card's
-// dense sentence is split into scannable trust chips (nothing dropped).
+// Same four stakeholder reasons as v1 - all copy preserved. The security card
+// keeps every certification in the body text (no separate tags).
 const REASONS = [
   {
-    accent: "var(--lime)",
     num: "01",
     icon: ICONS.price,
     title: "Priced for real retail businesses",
     body: "Invite-only, and built for customer-obsessed, service-oriented stores. Plans start where it doesn’t pinch.",
   },
   {
-    accent: "var(--coral)",
     num: "02",
     icon: ICONS.roi,
     title: "ROI you can see",
     body: "Every campaign shows revenue vs. spend. Not vanity metrics.",
   },
   {
-    accent: "var(--sky)",
     num: "03",
     icon: ICONS.shield,
     title: "Secured for your peace of mind",
-    body: "Encrypted end-to-end and hosted on certified, audited cloud infrastructure.",
-    chips: ["GDPR-compliant", "ISO 27001", "SOC 2 Type II", "256-bit SSL"],
+    body: "GDPR-compliant and encrypted end-to-end, hosted on ISO 27001 and SOC 2 Type II certified cloud servers with 256-bit SSL.",
   },
   {
-    accent: "var(--lime)",
     num: "04",
     icon: ICONS.support,
     title: "Responsive, timely support",
@@ -79,7 +74,7 @@ export default function WhyFulcrum({ v2 = false }) {
               <article
                 key={r.num}
                 className="why2-card reveal"
-                style={{ "--whyC": r.accent, transitionDelay: `${i * 0.05}s` }}
+                style={{ transitionDelay: `${i * 0.05}s` }}
               >
                 <div className="why2-head">
                   <span className="why2-tile">{r.icon}</span>
@@ -87,15 +82,6 @@ export default function WhyFulcrum({ v2 = false }) {
                 </div>
                 <h3 className="why2-title">{r.title}</h3>
                 <p className="why2-body">{r.body}</p>
-                {r.chips && (
-                  <div className="why2-chips">
-                    {r.chips.map((c) => (
-                      <span className="why2-chip" key={c}>
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </article>
             ))}
           </div>
