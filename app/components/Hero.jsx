@@ -1,4 +1,4 @@
-export default function Hero() {
+export default function Hero({ v2 = false }) {
   return (
     <section className="hero">
       <div className="container">
@@ -8,7 +8,7 @@ export default function Hero() {
               <span className="dot"></span> The local business growth engine
             </div>
             <h1>
-              The CRM built for retail businesses <em>and service providers.</em>
+              {v2 ? "The customer-loyalty app" : "The CRM"} built for retail businesses <em>and service providers.</em>
             </h1>
             <p className="lead">
               Acquire customers. Retain relationships. Grow repeat business - all from one refreshingly simple platform.

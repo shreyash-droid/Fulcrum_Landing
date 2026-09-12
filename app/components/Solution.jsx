@@ -1,4 +1,4 @@
-export default function Solution() {
+export default function Solution({ v2 = false }) {
   return (
     <section className="section section--forest" id="solution">
       <div className="container">
@@ -10,7 +10,7 @@ export default function Solution() {
             Meet Fulcrum. <em>The bridge you&rsquo;ve been missing</em> - Now built for you.
           </h2>
           <p className="lead solution-intro">
-            A hyper-local CRM that puts real customer relationships at the core of your business.
+            A hyper-local {v2 ? "customer-loyalty app" : "CRM"} that puts real customer relationships at the core of your business.
           </p>
         </div>
 
@@ -56,68 +56,71 @@ export default function Solution() {
           </div>
         </div>
 
-        {/* ARM philosophy - the growth flywheel at the heart of Fulcrum */}
-        <div className="arm reveal">
-          <div className="arm-head">
-            <span className="arm-kicker">The Fulcrum philosophy</span>
-            <h3>
-              <span className="arm-mono">A</span>cquire.{" "}
-              <span className="arm-mono">R</span>etain.{" "}
-              <span className="arm-mono">M</span>arket.
-            </h3>
-            <p>Three moves, one loop. Every customer you win feeds the next - a flywheel that compounds with every visit.</p>
-          </div>
-
-          <div className="arm-flow" role="list">
-            <div className="arm-node" role="listitem" style={{ "--armC": "var(--lime)" }}>
-              <div className="arm-badge">
-                <span className="arm-letter">A</span>
-                <span className="arm-step">01</span>
-              </div>
-              <div className="arm-word">Acquire</div>
-              <p>Scan the Customer App QR code to capture customer details at checkout.</p>
+        {/* ARM philosophy - the growth flywheel at the heart of Fulcrum.
+            Removed in v2 to cut the repeated three-step storytelling. */}
+        {!v2 ? (
+          <div className="arm reveal">
+            <div className="arm-head">
+              <span className="arm-kicker">The Fulcrum philosophy</span>
+              <h3>
+                <span className="arm-mono">A</span>cquire.{" "}
+                <span className="arm-mono">R</span>etain.{" "}
+                <span className="arm-mono">M</span>arket.
+              </h3>
+              <p>Three moves, one loop. Every customer you win feeds the next - a flywheel that compounds with every visit.</p>
             </div>
 
-            <div className="arm-link" aria-hidden="true">
-              <svg viewBox="0 0 48 24" width="48" height="24" fill="none">
-                <path d="M2 12h40" stroke="var(--lime)" strokeWidth="2" strokeDasharray="1 7" strokeLinecap="round" opacity=".7" />
-                <path d="M36 5l8 7-8 7" stroke="var(--lime)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <div className="arm-flow" role="list">
+              <div className="arm-node" role="listitem" style={{ "--armC": "var(--lime)" }}>
+                <div className="arm-badge">
+                  <span className="arm-letter">A</span>
+                  <span className="arm-step">01</span>
+                </div>
+                <div className="arm-word">Acquire</div>
+                <p>Scan the Customer App QR code to capture customer details at checkout.</p>
+              </div>
+
+              <div className="arm-link" aria-hidden="true">
+                <svg viewBox="0 0 48 24" width="48" height="24" fill="none">
+                  <path d="M2 12h40" stroke="var(--lime)" strokeWidth="2" strokeDasharray="1 7" strokeLinecap="round" opacity=".7" />
+                  <path d="M36 5l8 7-8 7" stroke="var(--lime)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+
+              <div className="arm-node" role="listitem" style={{ "--armC": "var(--sky)" }}>
+                <div className="arm-badge">
+                  <span className="arm-letter">R</span>
+                  <span className="arm-step">02</span>
+                </div>
+                <div className="arm-word">Retain</div>
+                <p>Reward every visit with points redeemable for gift vouchers, coupons and deals.</p>
+              </div>
+
+              <div className="arm-link" aria-hidden="true">
+                <svg viewBox="0 0 48 24" width="48" height="24" fill="none">
+                  <path d="M2 12h40" stroke="var(--coral)" strokeWidth="2" strokeDasharray="1 7" strokeLinecap="round" opacity=".7" />
+                  <path d="M36 5l8 7-8 7" stroke="var(--coral)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+
+              <div className="arm-node" role="listitem" style={{ "--armC": "var(--coral)" }}>
+                <div className="arm-badge">
+                  <span className="arm-letter">M</span>
+                  <span className="arm-step">03</span>
+                </div>
+                <div className="arm-word">Market</div>
+                <p>Send targeted offers to VIPs, quiet regulars, or first-timers separately.</p>
+              </div>
+            </div>
+
+            <div className="arm-loop" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 12a9 9 0 1 0 3-6.7" /><path d="M3 3v4h4" />
               </svg>
-            </div>
-
-            <div className="arm-node" role="listitem" style={{ "--armC": "var(--sky)" }}>
-              <div className="arm-badge">
-                <span className="arm-letter">R</span>
-                <span className="arm-step">02</span>
-              </div>
-              <div className="arm-word">Retain</div>
-              <p>Reward every visit with points redeemable for gift vouchers, coupons and deals.</p>
-            </div>
-
-            <div className="arm-link" aria-hidden="true">
-              <svg viewBox="0 0 48 24" width="48" height="24" fill="none">
-                <path d="M2 12h40" stroke="var(--coral)" strokeWidth="2" strokeDasharray="1 7" strokeLinecap="round" opacity=".7" />
-                <path d="M36 5l8 7-8 7" stroke="var(--coral)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-
-            <div className="arm-node" role="listitem" style={{ "--armC": "var(--coral)" }}>
-              <div className="arm-badge">
-                <span className="arm-letter">M</span>
-                <span className="arm-step">03</span>
-              </div>
-              <div className="arm-word">Market</div>
-              <p>Send targeted offers to VIPs, quiet regulars, or first-timers separately.</p>
+              <span>and the loop begins again - every visit compounds the last</span>
             </div>
           </div>
-
-          <div className="arm-loop" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 12a9 9 0 1 0 3-6.7" /><path d="M3 3v4h4" />
-            </svg>
-            <span>and the loop begins again - every visit compounds the last</span>
-          </div>
-        </div>
+        ) : null}
       </div>
     </section>
   );

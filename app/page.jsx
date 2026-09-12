@@ -18,7 +18,7 @@ export default function Home() {
         Skip to content
       </a>
 
-      <Header />
+      <Header variant="v1" />
 
       <main id="main">
         <Hero />

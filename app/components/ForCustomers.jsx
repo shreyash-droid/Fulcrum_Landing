@@ -1,4 +1,5 @@
-export default function ForCustomers() {
+export default function ForCustomers({ v2 = false }) {
+  const stepClass = v2 ? "cust-step cust-step--flat reveal" : "cust-step reveal";
   return (
     <section className="section section--paper customers" id="customers">
       <div className="container">
@@ -14,7 +15,7 @@ export default function ForCustomers() {
         </div>
 
         <div className="cust-steps">
-          <article className="cust-step reveal">
+          <article className={stepClass}>
             <div className="cust-step-head">
               <span className="cust-step-icon">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -26,7 +27,7 @@ export default function ForCustomers() {
             <div className="title">Discover</div>
             <div className="body">Featured stores by pin code.</div>
           </article>
-          <article className="cust-step reveal" style={{ transitionDelay: ".06s" }}>
+          <article className={stepClass} style={{ transitionDelay: ".06s" }}>
             <div className="cust-step-head">
               <span className="cust-step-icon">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -38,7 +39,7 @@ export default function ForCustomers() {
             <div className="title">Earn</div>
             <div className="body">Cash Credits / Points on every purchase.</div>
           </article>
-          <article className="cust-step reveal" style={{ transitionDelay: ".12s" }}>
+          <article className={stepClass} style={{ transitionDelay: ".12s" }}>
             <div className="cust-step-head">
               <span className="cust-step-icon">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -116,14 +117,16 @@ export default function ForCustomers() {
             <div className="cust-cta">
               <h3>Your storefront, in one app.</h3>
               <p>Know who walked in, reward every visit, and send the weekly offer that brings quiet regulars back - right from your phone, in minutes a day.</p>
-              <div style={{ marginBottom: "24px" }}>
-                <a href="#waitlist" className="btn btn--primary btn--lg">
-                  Download the business app{" "}
-                  <span className="arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </a>
-              </div>
+              {!v2 && (
+                <div style={{ marginBottom: "24px" }}>
+                  <a href="#waitlist" className="btn btn--primary btn--lg">
+                    Download the business app{" "}
+                    <span className="arrow" aria-hidden="true">
+                      ↗
+                    </span>
+                  </a>
+                </div>
+              )}
               <div className="store-badges">
                 <a href="#waitlist" className="store-badge" aria-label="Download the business app on the App Store">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -168,14 +171,16 @@ export default function ForCustomers() {
             <div className="cust-cta">
               <h3>Give your regulars a reason to come back.</h3>
               <p>One app, every neighbourhood store. Points that turn into real vouchers, coupons and deals.</p>
-              <div style={{ marginBottom: "24px" }}>
-                <a href="#waitlist" className="btn btn--primary btn--lg">
-                  Download the customer app{" "}
-                  <span className="arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </a>
-              </div>
+              {!v2 && (
+                <div style={{ marginBottom: "24px" }}>
+                  <a href="#waitlist" className="btn btn--primary btn--lg">
+                    Download the customer app{" "}
+                    <span className="arrow" aria-hidden="true">
+                      ↗
+                    </span>
+                  </a>
+                </div>
+              )}
               <div className="store-badges">
                 <a href="#waitlist" className="store-badge" aria-label="Download the customer app on the App Store">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

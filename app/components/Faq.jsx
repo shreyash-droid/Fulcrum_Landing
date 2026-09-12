@@ -1,4 +1,4 @@
-export default function Faq() {
+export default function Faq({ v2 = false }) {
   return (
     <section className="section section--paper" id="faq">
       <div className="container faq-grid">
@@ -23,7 +23,7 @@ export default function Faq() {
               <span className="plus" aria-hidden="true">+</span>
             </button>
             <div className="faq-a">
-              <p>A hyper-local CRM that helps small businesses capture, reward and engage customers, existing and new. We aim to empower micro-retail businesses with an integrated customer relationship management tool.</p>
+              <p>A hyper-local {v2 ? "customer-loyalty app" : "CRM"} that helps small businesses capture, reward and engage customers, existing and new. We aim to empower micro-retail businesses with {v2 ? "one simple app to manage it all" : "an integrated customer relationship management tool"}.</p>
             </div>
           </div>
           <div className="faq-item">

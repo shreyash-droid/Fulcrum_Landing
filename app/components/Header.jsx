@@ -1,20 +1,45 @@
-export default function Header() {
+export default function Header({ variant = "v1" }) {
+  const isV2 = variant === "v2";
+  const base = isV2 ? "/v2" : "/";
+  const hash = (id) => `${base}#${id}`;
+
+  // Nav links. v2 orders the on-page anchors to match the section order in the
+  // website (Business → How it works → Features → Customers), then the standalone
+  // routes, then FAQ. v1 keeps its original order.
+  const links = isV2
+    ? [
+        { href: hash("solution"), label: "Business" },
+        { href: hash("how-it-works"), label: "How it works" },
+        { href: hash("features"), label: "Features" },
+        { href: hash("customers"), label: "Customers" },
+        { href: "/pricing", label: "Pricing" },
+        { href: "/team", label: "Team" },
+        { href: hash("faq"), label: "FAQ" },
+      ]
+    : [
+        { href: hash("solution"), label: "Business" },
+        { href: hash("customers"), label: "Customers" },
+        { href: hash("features"), label: "Features" },
+        { href: hash("how-it-works"), label: "How it works" },
+        { href: "/pricing", label: "Pricing" },
+        { href: "/team", label: "Team" },
+        { href: hash("faq"), label: "FAQ" },
+      ];
+
   return (
     <header className="site-header" id="siteHeader">
       <div className="nav">
-        <a href="/" className="brand" aria-label="Fulcrum home">
+        <a href={base} className="brand" aria-label="Fulcrum home">
           <img className="brand-mark" src="/assets/logo-mark.svg" alt="" width="26" height="27" />
           Fulcrum<span className="dot">.</span>
         </a>
         <nav className="nav-links" id="navLinks" aria-label="Primary">
-          <a href="/#solution">Business</a>
-          <a href="/#customers">Customers</a>
-          <a href="/#features">Features</a>
-          <a href="/#how-it-works">How it works</a>
-          <a href="/pricing">Pricing</a>
-          <a href="/team">Team</a>
-          <a href="/#faq">FAQ</a>
-          <a href="/#waitlist" className="btn btn--primary btn--md nav-menu-cta">
+          {links.map((l) => (
+            <a key={l.label} href={l.href}>
+              {l.label}
+            </a>
+          ))}
+          <a href={hash("waitlist")} className="btn btn--primary btn--md nav-menu-cta">
             Join the waitlist{" "}
             <span className="arrow" aria-hidden="true">
               ↗
@@ -22,7 +47,15 @@ export default function Header() {
           </a>
         </nav>
         <div className="nav-actions">
-          <a href="/#waitlist" className="btn btn--primary btn--md">
+          <div className="ver-toggle" role="group" aria-label="Page version">
+            <a href="/" className={isV2 ? "" : "is-active"} aria-current={isV2 ? undefined : "page"}>
+              V1
+            </a>
+            <a href="/v2" className={isV2 ? "is-active" : ""} aria-current={isV2 ? "page" : undefined}>
+              V2
+            </a>
+          </div>
+          <a href={hash("waitlist")} className="btn btn--primary btn--md">
             Join the waitlist{" "}
             <span className="arrow" aria-hidden="true">
               ↗
