@@ -10,7 +10,7 @@ export default function Pricing() {
             One toolkit. <em>Your billing rhythm.</em>
           </h2>
           <p className="lead">
-            Every plan includes the full Fulcrum toolkit &mdash; the longer you commit, the less you pay. Right now, the inaugural offer takes up to a third off.
+            Every plan includes the full Fulcrum toolkit. The longer you commit, the less you pay. Right now, the inaugural offer takes up to a third off.
           </p>
           <div className="offer-ribbon" role="note">
             <span className="offer-ribbon__spark" aria-hidden="true">&#10022;</span>
@@ -57,7 +57,7 @@ export default function Pricing() {
             </div>
             <div className="p-gst">+ 18% GST</div>
             <div className="p-day">&asymp; &#8377;16 a day</div>
-            <div className="p-note">A full year of the toolkit at the inaugural rate &mdash; lock it in before the offer disappears.</div>
+            <div className="p-note">A full year of the toolkit at the inaugural rate. Lock it in before the offer disappears.</div>
             <div className="p-spacer"></div>
             <a href="/#waitlist" className="btn btn--primary btn--lg">
               Claim 33% off now{" "}
@@ -104,7 +104,7 @@ export default function Pricing() {
             <span className="support-banner__icon" aria-hidden="true">&#10003;</span>
             <div className="support-banner__text">
               <strong>Real human support in under 24&ndash;48 hours</strong>
-              <span>No bots. No chats &mdash; real people, every time.</span>
+              <span>No bots. No chats. Real people, every time.</span>
             </div>
           </div>
         </div>
